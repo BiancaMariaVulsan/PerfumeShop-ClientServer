@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="567.0" prefWidth="759.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perfumeshop.controller.AdminController">
+    <children>
+        <Button fx:id="addButton" layoutX="651.0" layoutY="221.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="85.0" text="Add" />
+        <TableView fx:id="personTableView" layoutX="92.0" layoutY="125.0" prefHeight="430.0" prefWidth="536.0">
+            <columns>
+                <TableColumn fx:id="lastNameColumn" prefWidth="197.39999389648438" text="Last Name" />
+                <TableColumn fx:id="roleColumn" minWidth="9.79998779296875" prefWidth="137.0" text="Role" />
+                <TableColumn fx:id="firstNameColumn" prefWidth="199.3999786376953" text="First Name" />
+            </columns>
+        </TableView>
+        <Label layoutX="327.0" layoutY="28.0" prefHeight="24.0" prefWidth="45.0" />
+        <Button fx:id="deleteButton" layoutX="651.0" layoutY="147.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="85.0" text="Delete" />
+      <Button fx:id="editButton" layoutX="651.0" layoutY="298.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="85.0" text="Edit" />
+        <Button fx:id="filterButton" layoutX="651.0" layoutY="65.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="85.0" text="Filter" />
+        <ChoiceBox fx:id="roleChoice" layoutX="484.0" layoutY="73.0" prefHeight="26.0" prefWidth="135.0" />
+    </children>
+</AnchorPane>

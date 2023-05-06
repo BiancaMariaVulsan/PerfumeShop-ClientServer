@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="332.0" prefWidth="386.0" spacing="20.0" stylesheets="@start.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perfumeshop.controller.LogInController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+        <Label prefHeight="54.0" prefWidth="180.0" text="Welcome !">
+            <font>
+                <Font size="36.0" />
+            </font>
+        </Label>
+        <SplitPane dividerPositions="0.31" prefHeight="0.0" prefWidth="200.0">
+            <items>
+                <Label fx:id="usernameLabel" prefHeight="18.0" prefWidth="80.0" text="Username:">
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding></Label>
+                <TextField fx:id="usernameTextField" prefHeight="26.0" prefWidth="224.0" />
+            </items>
+        </SplitPane>
+        <SplitPane dividerPositions="0.32" prefHeight="0.0" prefWidth="200.0">
+            <items>
+                <Label fx:id="passwordLabel" prefHeight="18.0" prefWidth="80.0" text="Password:">
+                    <padding>
+                        <Insets left="10.0" right="10.0" />
+                    </padding></Label>
+                <PasswordField fx:id="passwordTextField" prefHeight="26.0" prefWidth="231.0" />
+            </items>
+        </SplitPane>
+        <ButtonBar prefHeight="40.0" prefWidth="183.0">
+            <buttons>
+            <ChoiceBox fx:id="languageChoice" prefWidth="150.0" />
+                <Button fx:id="signInButton" mnemonicParsing="false" text="Sign in" />
+            </buttons>
+        </ButtonBar>
+    </children>
+</VBox>

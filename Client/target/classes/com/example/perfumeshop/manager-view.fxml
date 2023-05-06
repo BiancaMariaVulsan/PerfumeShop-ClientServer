@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="571.0" prefWidth="811.0" stylesheets="@start.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perfumeshop.controller.ManagerController">
+    <children>
+        <TableView fx:id="productTableView" layoutX="149.0" layoutY="126.0" prefHeight="430.0" prefWidth="536.0">
+            <columns>
+                <TableColumn fx:id="nameColumn" prefWidth="158.0" text="Name" />
+                <TableColumn fx:id="brandColumn" prefWidth="199.19998168945312" text="Brand" />
+                <TableColumn fx:id="availabilityColumn" minWidth="9.79998779296875" prefWidth="95.39999389648438" text="Availability" />
+                <TableColumn fx:id="priceColumn" prefWidth="83.79998779296875" text="Price" />
+            </columns>
+        </TableView>
+        <Button fx:id="filterButton" layoutX="694.0" layoutY="82.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="85.0" text="Filter" />
+        <Label layoutX="381.0" layoutY="25.0" />
+        <Label layoutX="28.0" layoutY="90.0" text="Filtering Criteria" />
+        <TextField fx:id="brandFilter" layoutX="312.0" layoutY="86.0" prefHeight="26.0" prefWidth="186.0" />
+        <TextField fx:id="priceFilter" layoutX="606.0" layoutY="87.0" prefHeight="26.0" prefWidth="78.0" />
+      <TextField fx:id="nameFilter" layoutX="151.0" layoutY="87.0" prefHeight="26.0" prefWidth="148.0" />
+      <Button fx:id="sortNameButton" layoutX="27.0" layoutY="170.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="99.0" text="Sort by name" />
+      <Button fx:id="sortPriceButton" layoutX="27.0" layoutY="232.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="99.0" text="Sort by price" />
+      <CheckBox fx:id="availabilityFilter" layoutX="539.0" layoutY="86.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="22.0" />
+        <Button fx:id="saveCSV" layoutX="694.0" layoutY="178.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="99.0" text="Save csv" />
+        <Button fx:id="saveJSON" layoutX="697.0" layoutY="242.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="99.0" text="Save json" />
+        <Button fx:id="saveXML" layoutX="697.0" layoutY="309.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="99.0" text="Save xml" />
+        <Button fx:id="saveTXT" layoutX="697.0" layoutY="374.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="99.0" text="Save txt" />
+        <ChoiceBox fx:id="shopChoice" layoutX="11.0" layoutY="87.0" prefHeight="26.0" prefWidth="131.0" />
+      <Button fx:id="brandAnalysisButton" layoutX="27.0" layoutY="320.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="99.0" text="Brand Chart" />
+      <Button fx:id="priceAnalysisButton" layoutX="27.0" layoutY="374.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="99.0" text="Price Chart" />
+    </children>
+</AnchorPane>

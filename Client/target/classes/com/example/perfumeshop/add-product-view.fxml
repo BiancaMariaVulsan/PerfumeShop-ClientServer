@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="315.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perfumeshop.controller.AddProductController">
+    <children>
+        <Button fx:id="saveButton" layoutX="133.0" layoutY="328.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="74.0" text="Save" />
+        <TextField fx:id="brandText" layoutX="96.0" layoutY="148.0" />
+        <TextField fx:id="priceText" layoutX="96.0" layoutY="265.0" />
+        <TextField fx:id="nameText" layoutX="96.0" layoutY="91.0" />
+        <Label fx:id="nameLabel" layoutX="40.0" layoutY="95.0" text="Name" />
+        <Label fx:id="brandLabel" layoutX="40.0" layoutY="152.0" text="Brand" />
+        <Label layoutX="41.0" layoutY="213.0" text="Stock" />
+        <Label fx:id="priceLabel" layoutX="42.0" layoutY="269.0" text="Price" />
+        <Label fx:id="productLabel" layoutX="149.0" layoutY="34.0" text="Product" />
+      <TextField fx:id="stockText" layoutX="95.0" layoutY="209.0" />
+    </children>
+
+</AnchorPane>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.perfumeshop.controller.RegisterController">
+    <children>
+        <HBox prefHeight="57.0" prefWidth="618.0">
+            <VBox.margin>
+                <Insets left="10.0" top="10.0" />
+            </VBox.margin>
+            <children>
+                <Label contentDisplay="CENTER" prefHeight="54.0" prefWidth="554.0" text="Personal Information :">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+      <SplitPane dividerPositions="0.5" layoutX="20.0" layoutY="88.0" prefHeight="40.0" prefWidth="690.0">
+         <items>
+            <Label fx:id="firstNameLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="84.0" text="First Name :">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="firstNameTextField" minWidth="-Infinity">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </TextField>
+         </items>
+      </SplitPane>
+      <SplitPane dividerPositions="0.5" layoutX="10.0" layoutY="200.0" prefHeight="40.0" prefWidth="692.0">
+         <items>
+            <Label fx:id="lastNameLabel" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="84.0" text="Last Name :">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="lastNameTextField" prefHeight="38.0" prefWidth="606.0" translateZ="10.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </TextField>
+         </items>
+      </SplitPane>
+      <SplitPane dividerPositions="0.5" layoutX="10.0" layoutY="200.0" prefHeight="40.0" prefWidth="690.0">
+         <items>
+            <Label fx:id="usrnameLabel" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="84.0" text="Username :">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="usernameTextField" prefHeight="38.0" prefWidth="631.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </TextField>
+         </items>
+      </SplitPane>
+      <SplitPane dividerPositions="0.5" layoutX="10.0" layoutY="280.0" prefHeight="40.0" prefWidth="690.0">
+         <items>
+            <Label fx:id="passwordLabel" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="84.0" text="Password :">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="passwordTextField">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </TextField>
+         </items>
+      </SplitPane>
+      <SplitPane dividerPositions="0.5" layoutX="10.0" layoutY="200.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="300.0">
+         <items>
+            <Label fx:id="roleLabel" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="84.0" text="Role :">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <ChoiceBox id="roleChoiceBox" fx:id="roleChoiceBox" prefHeight="39.0" prefWidth="207.0" />
+         </items>
+      </SplitPane>
+      <SplitPane dividerPositions="0.5" layoutX="10.0" layoutY="241.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="300.0">
+         <items>
+            <Label fx:id="shopLabel" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="84.0" text="Shop :">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <ChoiceBox id="shopChoiceBox" fx:id="shopChoiceBox" prefHeight="39.0" prefWidth="207.0" />
+         </items>
+      </SplitPane>
+        <ButtonBar prefHeight="70.0" prefWidth="580.0" translateY="50.0">
+            <VBox.margin>
+                <Insets right="20.0" />
+            </VBox.margin>
+            <buttons>
+                <ProgressIndicator fx:id="progressIndicator" prefHeight="23.0" progress="0.0" />
+                <CheckBox fx:id="termsCheckBox" mnemonicParsing="false" text="I agree with the Terms, Conditions and Privacy Policy">
+                    <padding>
+                        <Insets right="10.0" />
+                    </padding>
+                </CheckBox>
+                <Button fx:id="registerButton" maxHeight="10.0" maxWidth="10.0" mnemonicParsing="false">
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@verify.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                    </padding>
+                </Button>
+                <Button fx:id="exitButton" maxHeight="10.0" maxWidth="10.0" mnemonicParsing="false">
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@remove-button.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                    </padding>
+                </Button>
+            </buttons>
+        </ButtonBar>
+    </children>
+</VBox>
