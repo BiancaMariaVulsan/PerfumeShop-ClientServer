@@ -31,7 +31,7 @@ public class AuthController {
                 .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
                 .build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        // Return the token to the client
+
         if(response.statusCode() == 401) {
             return ResponseEntity.status(401).body("Wrong username or password!");
         } else {

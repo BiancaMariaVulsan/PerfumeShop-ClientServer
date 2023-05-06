@@ -19,6 +19,6 @@ module com.example.perfumeshop {
     exports com.example.perfumeshop;
     exports com.example.perfumeshop.controller;
     opens com.example.perfumeshop.controller to javafx.fxml;
-//    opens com.example.perfumeshop.model to java.xml.bind;
-//    exports com.example.perfumeshop.model;
+    opens com.example.perfumeshop.model to java.xml.bind;
+    exports com.example.perfumeshop.model;
 }
