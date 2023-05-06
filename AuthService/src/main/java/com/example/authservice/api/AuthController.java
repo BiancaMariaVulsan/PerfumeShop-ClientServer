@@ -1,5 +1,7 @@
 package com.example.authservice.api;
 
+import com.example.authservice.logic.LogInLogic;
+import com.example.authservice.model.LoginRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,6 +18,11 @@ public class AuthController {
         String username = loginRequest.getUsername();
         String password = loginRequest.getPassword();
         // Return the token to the client
-        return ResponseEntity.ok("Hello, " + username + "!");
+        LogInLogic logInLogic = new LogInLogic(username, password);
+        if(logInLogic.signIn()) {
+            return ResponseEntity.ok("Hello!");
+        } else {
+            return ResponseEntity.status(401).body("Wrong username or password!");
+        }
     }
 }

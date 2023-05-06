@@ -8,10 +8,8 @@ import java.net.http.HttpClient;
 
 public class LoginRequest {
 
-    public void login() throws IOException, InterruptedException {
+    public void login(String username, String password) throws IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();
-        String username = "maria";
-        String password = "maria";
         String jsonBody = "{\"username\":\"" + username + "\",\"password\":\"" + password + "\"}";
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("http://localhost:8080/api/login"))
@@ -22,8 +20,10 @@ public class LoginRequest {
         String token = response.body();
         if (response.statusCode() == 200) {
             System.out.println("Login successful");
+            System.out.println("Token: " + token);
         } else {
             System.out.println("Login failed");
+            System.out.println("Token: " + token);
         }
     }
 }

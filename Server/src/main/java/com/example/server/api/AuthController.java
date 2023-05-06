@@ -1,6 +1,6 @@
 package com.example.server.api;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.server.model.LoginRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,6 +32,10 @@ public class AuthController {
                 .build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         // Return the token to the client
-        return ResponseEntity.ok(response.body());
+        if(response.statusCode() == 401) {
+            return ResponseEntity.status(401).body("Wrong username or password!");
+        } else {
+            return ResponseEntity.ok(response.body());
+        }
     }
 }

@@ -1,4 +1,4 @@
-package com.example.server.api;
+package com.example.server.model;
 
 public class LoginRequest {
     private String username;
