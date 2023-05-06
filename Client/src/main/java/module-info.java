@@ -13,6 +13,7 @@ module com.example.perfumeshop {
     requires java.desktop;
     requires java.xml.bind;
     requires com.fasterxml.jackson.databind;
+    requires java.net.http;
 
     opens com.example.perfumeshop to javafx.fxml;
     exports com.example.perfumeshop;
