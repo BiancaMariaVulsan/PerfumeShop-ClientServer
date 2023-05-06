@@ -19,10 +19,7 @@ public class AuthController {
         String password = loginRequest.getPassword();
         // Return the token to the client
         LogInLogic logInLogic = new LogInLogic(username, password);
-        if(logInLogic.signIn()) {
-            return ResponseEntity.ok("Hello!");
-        } else {
-            return ResponseEntity.status(401).body("Wrong username or password!");
-        }
+        String response = logInLogic.signIn();
+        return ResponseEntity.ok(response);
     }
 }

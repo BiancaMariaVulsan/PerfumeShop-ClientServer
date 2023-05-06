@@ -14,15 +14,15 @@ public class LogInLogic {
         personPersistence = new PersonPersistence();
     }
 
-    public boolean signIn() {
+    public String signIn() {
         Person person = getPersonByUsername(username);
         if (person == null) {
-            return false;
+            return "Wrong username or password!";
         }
         if (person.getPassword().equals(password)) {
-            return true;
+            return person.getRole().name();
         }
-        return false;
+        return "Wrong username or password!";
     }
 
     private Person getPersonByUsername(String username) {
