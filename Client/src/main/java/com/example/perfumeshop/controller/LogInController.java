@@ -1,11 +1,13 @@
 package com.example.perfumeshop.controller;
 
 import com.example.perfumeshop.requests.LoginRequest;
+import com.example.perfumeshop.requests.PersonRequest;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.util.Callback;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -23,6 +25,7 @@ public class LogInController implements Initializable {
     @FXML
     private ChoiceBox<String> languageChoice;
 
+    private final PersonRequest personRequest = new PersonRequest();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         signInButton.setOnAction(actionEvent -> {
@@ -46,7 +49,7 @@ public class LogInController implements Initializable {
                 } else if(role.equals("EMPLOYEE")) {
                     Callback<Class<?>, Object> controllerFactory = type -> {
                         if (type == ManagerController.class) {
-                            return new EmployeeController();
+                            return new EmployeeController(getShopId(usernameTextField.getText()));
                         } else {
                             try {
                                 return type.newInstance();
@@ -78,5 +81,14 @@ public class LogInController implements Initializable {
                 e.printStackTrace();
             }
         });
+    }
+
+    private int getShopId(String username) {
+        try {
+            return personRequest.getEmployeeShop(username);
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        return -1;
     }
 }

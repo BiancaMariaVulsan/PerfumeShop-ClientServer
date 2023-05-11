@@ -5,49 +5,111 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d36c23ad-556d-4ac9-80e5-6191bf4bd9d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/model/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/model/Language.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/model/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/model/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/model/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/model/Shop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/model/ShopProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/requests/ProductRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/example/productservice/api/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/example/productservice/logic/ProductLogic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/example/productservice/model/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/example/productservice/model/Shop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/example/productservice/model/ShopProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/example/productservice/model/persistence/ConnectionFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/example/productservice/model/persistence/DatabaseObj.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/example/productservice/model/persistence/ProductPersistence.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/example/productservice/model/persistence/ShopPersistence.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/api/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_unknown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_configuration_processor_unknown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_unknown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_unknown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_unknown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/requests/PersonRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/exportService/ExportService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/Mediator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/ServiceMediatorImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/Language.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/LoginPerson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/Shop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/ShopProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/persistence/ConnectionFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/persistence/DatabaseObj.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/persistence/EmployeePersistence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/persistence/PersonPersistence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/persistence/ProductPersistence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/persistence/ShopPersistence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/persistence/files/CsvPersistence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/persistence/files/JsonPersistence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/persistence/files/LanguagePersistence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/persistence/files/TxtPersistence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/persistence/files/XmlPersistence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/PersonService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/logic/LogInLogic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/logic/ProductLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_ldap_3_0_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_unknown.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_ldap_3_0_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_ldap_spring_ldap_core_3_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_6_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_crypto_6_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_test_6_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_6_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/AddProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/AddProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/BrandChartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/BrandChartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/src/main/java/com/example/authservice/AuthServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/src/main/java/com/example/authservice/api/AuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/src/main/java/com/example/authservice/logic/LogInLogic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/src/main/java/com/example/authservice/model/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/src/main/java/com/example/authservice/model/LoginRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/src/main/java/com/example/authservice/model/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/src/main/java/com/example/authservice/model/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/src/main/java/com/example/authservice/model/Shop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/src/main/java/com/example/authservice/model/persistence/ConnectionFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/src/main/java/com/example/authservice/model/persistence/DatabaseObj.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/src/main/java/com/example/authservice/model/persistence/EmployeePersistence.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/src/main/java/com/example/authservice/model/persistence/PersonPersistence.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/src/main/java/com/example/authservice/model/persistence/ShopPersistence.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/src/main/java/com/example/authservice/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AuthService/src/test/java/com/example/authservice/AuthServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/PerfumeShop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/PerfumeShop.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/ManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/ManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/PriceChartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/PriceChartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/requests/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/requests/LoginRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/AddProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/AddProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/BrandChartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/BrandChartController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/LogInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/requests/ProductRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/requests/ProductRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/EmployeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/EmployeeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/ManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/ManagerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/PriceChartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/PriceChartController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/RegisterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/LoginRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/LoginRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExportService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ExportService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/LogInController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/LogInController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/ProductRequest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/ProductRequest$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/ProductRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/ProductRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExportService/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExportService/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExportService/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExportService/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExportService/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExportService/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExportService/src/main/java/com/example/exportservice/ExportServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExportService/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExportService/src/test/java/com/example/exportservice/ExportServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/example/productservice/ProductServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/example/productservice/api/ProductController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/example/productservice/logic/ProductLogic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/example/productservice/model/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/example/productservice/model/Shop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/example/productservice/model/ShopProduct.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/example/productservice/model/persistence/ConnectionFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/example/productservice/model/persistence/DatabaseObj.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/example/productservice/model/persistence/ProductPersistence.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/example/productservice/model/persistence/ShopPersistence.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/test/java/com/example/productservice/ProductServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/ServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/ServerApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/api/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/api/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/api/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/api/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/LoginRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/Product.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +119,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -85,24 +148,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/FACULTATE/ANIII/SEM2/SD/lab/Project_Client_Server/PerfumeShop-ClientServer/AuthService/src/main/java/com/example/authservice/api",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/FACULTATE/ANIII/SEM2/CN/lab/Relay&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;87fa11931679cbce00c643a254a5e894&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\FACULTATE\ANIII\SEM2\SD\lab\Project_Client_Server\PerfumeShop-ClientServer\AuthService\src\main\java\com\example\authservice\api" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.server.productService.logic" />
+      <recent name="com.example.server.personService.logic" />
+      <recent name="com.example.server.personService.controller" />
+      <recent name="com.example.server.model" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -112,7 +182,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.HelloApplication">
+  <component name="RunManager" selected="Spring Boot.ServerApplication">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.perfumeshop.HelloApplication" />
       <module name="PerfumeShop" />
@@ -181,9 +251,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.ServerApplication" />
         <item itemvalue="Application.HelloApplication" />
         <item itemvalue="Spring Boot.AuthServiceApplication" />
-        <item itemvalue="Spring Boot.ServerApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -195,7 +265,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1683374738162</updated>
-      <workItem from="1683374740770" duration="19503000" />
+      <workItem from="1683374740770" duration="19617000" />
+      <workItem from="1683551923707" duration="118000" />
+      <workItem from="1683615961291" duration="3710000" />
+      <workItem from="1683703237711" duration="1123000" />
+      <workItem from="1683735743071" duration="4850000" />
+      <workItem from="1683805111593" duration="9093000" />
     </task>
     <servers />
   </component>
@@ -215,5 +290,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/PersonService.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

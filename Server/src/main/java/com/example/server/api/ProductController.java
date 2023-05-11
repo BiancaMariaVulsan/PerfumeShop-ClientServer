@@ -1,40 +1,33 @@
 package com.example.server.api;
 
+import com.example.server.mediator.Mediator;
+import com.example.server.mediator.ServiceMediatorImpl;
 import com.example.server.model.Product;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.example.server.model.ShopProduct;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api")
 public class ProductController {
-    private static final String BASE_URL = "http://localhost:8082/api";
+    private final Mediator mediator = new ServiceMediatorImpl();
 
     @GetMapping("/products")
-    public ResponseEntity<List<Product>> getAllProducts() throws IOException, InterruptedException, URISyntaxException {
-        HttpClient client = HttpClient.newHttpClient();
-
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(new URI(BASE_URL + "/products"))
-                .GET()
-                .build();
-
-        HttpResponse<InputStream> response = client.send(request, HttpResponse.BodyHandlers.ofInputStream());
-
-        ObjectMapper objectMapper = new ObjectMapper();
-        List<Product> products = objectMapper.readValue(response.body(), new TypeReference<List<Product>>(){});
-
+    public ResponseEntity<List<Product>> getAllProducts() {
+        List<Product> products = (List<Product>) mediator.notify("productService", "allProducts");
         return ResponseEntity.ok(products);
     }
+
+    @GetMapping("/shop_products/{shopId}")
+    public ResponseEntity<List<ShopProduct>> getShopProducts(@PathVariable int shopId) {
+        List<ShopProduct> shopProducts = (List<ShopProduct>) mediator.notify("productService", shopId);
+        return ResponseEntity.ok(shopProducts);
+    }
+
 }
 

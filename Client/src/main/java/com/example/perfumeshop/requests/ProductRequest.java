@@ -1,6 +1,7 @@
 package com.example.perfumeshop.requests;
 
 import com.example.perfumeshop.model.Product;
+import com.example.perfumeshop.model.ShopProduct;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -30,6 +31,22 @@ public class ProductRequest {
         List<Product> products = objectMapper.readValue(response.body(), new TypeReference<List<Product>>(){});
         return products;
     }
+
+    public List<ShopProduct> getShopProducts(int shopId) throws URISyntaxException, IOException, InterruptedException {
+        HttpClient client = HttpClient.newHttpClient();
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(new URI(BASE_URL + "/products?shopId=" + shopId))
+                .GET()
+                .build();
+
+        HttpResponse<InputStream> response = client.send(request, HttpResponse.BodyHandlers.ofInputStream());
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        List<ShopProduct> products = objectMapper.readValue(response.body(), new TypeReference<List<ShopProduct>>(){});
+        return products;
+    }
+
 
     // todo: handle this request
     public boolean isAvailableInTheChain(int productId) throws URISyntaxException, IOException, InterruptedException{

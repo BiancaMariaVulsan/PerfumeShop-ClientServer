@@ -2,6 +2,9 @@ package com.example.server.model;
 
 import javafx.beans.property.*;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "product")
 public class Product {
     private final IntegerProperty id = new SimpleIntegerProperty();
     private final StringProperty name = new SimpleStringProperty();
@@ -72,11 +75,11 @@ public class Product {
     }
 
     @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name=" + name +
-                ", price=" + price +
-                '}';
-    }
+        public String toString() {
+            return "Product{" +
+                    "id=" + id +
+                    ", name=" + name +
+                    ", price=" + price +
+                    '}';
+        }
 }
