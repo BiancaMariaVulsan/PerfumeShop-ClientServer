@@ -28,6 +28,5 @@ public class ProductController {
         List<ShopProduct> shopProducts = (List<ShopProduct>) mediator.notify("productService", shopId);
         return ResponseEntity.ok(shopProducts);
     }
-
 }
 
