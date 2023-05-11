@@ -36,14 +36,14 @@ public class ProductRequest {
         HttpClient client = HttpClient.newHttpClient();
 
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(new URI(BASE_URL + "/products?shopId=" + shopId))
+                .uri(new URI(BASE_URL + "/shop_products?shopId=" + shopId))
                 .GET()
                 .build();
 
         HttpResponse<InputStream> response = client.send(request, HttpResponse.BodyHandlers.ofInputStream());
 
         ObjectMapper objectMapper = new ObjectMapper();
-        List<ShopProduct> products = objectMapper.readValue(response.body(), new TypeReference<List<ShopProduct>>(){});
+        List<ShopProduct> products = objectMapper.readValue(response.body(), new TypeReference<>(){});
         return products;
     }
 

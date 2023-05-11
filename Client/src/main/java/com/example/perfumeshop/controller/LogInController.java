@@ -8,6 +8,7 @@ import javafx.scene.control.*;
 import javafx.util.Callback;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -34,7 +35,7 @@ public class LogInController implements Initializable {
                 String role = loginRequest.login(usernameTextField.getText(), passwordTextField.getText());
                 if(role.equals("ADMIN")) {
                     Callback<Class<?>, Object> controllerFactory = type -> {
-                        if (type == ManagerController.class) {
+                        if (type == AdminController.class) {
                             return new AdminController();
                         } else {
                             try {
@@ -48,7 +49,7 @@ public class LogInController implements Initializable {
                     Controller.loadFXML("/com/example/perfumeshop/admin-view.fxml", controllerFactory);
                 } else if(role.equals("EMPLOYEE")) {
                     Callback<Class<?>, Object> controllerFactory = type -> {
-                        if (type == ManagerController.class) {
+                        if (type == EmployeeController.class) {
                             return new EmployeeController(getShopId(usernameTextField.getText()));
                         } else {
                             try {
@@ -86,7 +87,7 @@ public class LogInController implements Initializable {
     private int getShopId(String username) {
         try {
             return personRequest.getEmployeeShop(username);
-        } catch (IOException | InterruptedException e) {
+        } catch (IOException | InterruptedException | URISyntaxException e) {
             e.printStackTrace();
         }
         return -1;

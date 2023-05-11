@@ -8,7 +8,7 @@ public class Employee extends Person {
         this.shopId.set(shopId);
     }
 
-    private final IntegerProperty shopId = new SimpleIntegerProperty();;
+    private final IntegerProperty shopId = new SimpleIntegerProperty();
 
     public Employee(String firstName, String lastName, String username, String password, int shopId) {
         super(firstName, lastName, Role.EMPLOYEE, username, password);
