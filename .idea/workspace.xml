@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d36c23ad-556d-4ac9-80e5-6191bf4bd9d4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/logic/filters/AndSpecification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/logic/filters/BrandSpecification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/logic/filters/LowPriceSpecification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/logic/filters/NotSpecification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/logic/filters/OrSpecification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/logic/filters/Specification.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/api/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/api/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/logic/ProductLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/logic/ProductLogic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +174,7 @@
       <workItem from="1683615961291" duration="3710000" />
       <workItem from="1683703237711" duration="1123000" />
       <workItem from="1683735743071" duration="4850000" />
-      <workItem from="1683805111593" duration="10371000" />
+      <workItem from="1683805111593" duration="14309000" />
     </task>
     <servers />
   </component>
