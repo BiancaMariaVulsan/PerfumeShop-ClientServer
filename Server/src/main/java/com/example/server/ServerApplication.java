@@ -1,9 +1,12 @@
 package com.example.server;
 
-import com.example.server.filesService.FilesService;
-import com.example.server.mediator.ServiceMediatorImpl;
-import com.example.server.personService.PersonService;
-import com.example.server.productService.ProductService;
+import com.example.server.mediator.Mediator;
+import com.example.server.mediator.requests.GetEmployeeShopRequest;
+import com.example.server.mediator.requests.GetPersonsRequest;
+import com.example.server.mediator.requests.LoginPersonRequest;
+import com.example.server.personService.GetEmployeeShopHandler;
+import com.example.server.personService.GetPersonsHandler;
+import com.example.server.personService.LoginPersonHandler;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -12,13 +15,12 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 public class ServerApplication {
 
     public static void main(String[] args) {
-        ServiceMediatorImpl mediator = new ServiceMediatorImpl();
-        ProductService productService = new ProductService();
-        PersonService personService = new PersonService();
-        FilesService exportService = new FilesService();
-        mediator.registerService("productService", productService);
-        mediator.registerService("personService", personService);
-        mediator.registerService("filesService", exportService);
+        Mediator mediator = new Mediator();
+
+        mediator.registerHandler(GetEmployeeShopRequest.class, GetEmployeeShopHandler.class);
+        mediator.registerHandler(GetPersonsRequest.class, GetPersonsHandler.class);
+        mediator.registerHandler(LoginPersonRequest.class, LoginPersonHandler.class);
+
         SpringApplication.run(ServerApplication.class, args);
     }
 

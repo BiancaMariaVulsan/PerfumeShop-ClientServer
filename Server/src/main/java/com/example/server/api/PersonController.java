@@ -1,7 +1,11 @@
 package com.example.server.api;
 
+import com.example.server.mediator.IMediator;
 import com.example.server.mediator.Mediator;
-import com.example.server.mediator.ServiceMediatorImpl;
+import com.example.server.mediator.requests.GetEmployeeShopRequest;
+import com.example.server.mediator.requests.GetPersonsRequest;
+import com.example.server.mediator.responses.GetEmployeeShopResponse;
+import com.example.server.mediator.responses.GetPersonsResponse;
 import com.example.server.model.Person;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,17 +18,22 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class PersonController {
-    private final Mediator mediator = new ServiceMediatorImpl();
+    private final IMediator mediator = new Mediator();
 
     @GetMapping("/get_shop")
     public ResponseEntity<Integer> getShop(@RequestParam String username) {
-        Integer shop = (Integer) mediator.notify("personService", username);
-        return ResponseEntity.ok(shop);
+        GetEmployeeShopRequest request = new GetEmployeeShopRequest();
+        request.setUsername(username);
+        GetEmployeeShopResponse response = (GetEmployeeShopResponse) mediator.send(request);
+
+        return ResponseEntity.ok(response.getShopId());
     }
 
     @GetMapping("/get_persons")
     public ResponseEntity<List<Person>> getPersons() {
-        List<Person> personList = (List<Person>) mediator.notify("personService", "getPersons");
-        return ResponseEntity.ok(personList);
+        GetPersonsRequest request = new GetPersonsRequest();
+        GetPersonsResponse response = (GetPersonsResponse) mediator.send(request);
+
+        return ResponseEntity.ok(response.getPersons());
     }
 }
