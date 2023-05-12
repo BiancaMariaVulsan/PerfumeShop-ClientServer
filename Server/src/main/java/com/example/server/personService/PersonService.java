@@ -15,7 +15,11 @@ public class PersonService implements Service {
             LogInLogic logInLogic = new LogInLogic(username, password);
             return logInLogic.signIn();
         } else if (message instanceof String){
-            return personLogic.getEmployeeShop((String) message);
+            if(message.equals("getPersons")) {
+                return personLogic.getPersons();
+            } else {
+                return personLogic.getEmployeeShop((String) message);
+            }
         }
         return null;
     }
