@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d36c23ad-556d-4ac9-80e5-6191bf4bd9d4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/requests/PersonRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/requests/PersonRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/PersonRequest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/PersonRequest$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/PersonRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/PersonRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/persistence/EmployeePersistence.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/persistence/PersonPersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/persistence/PersonPersistence.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -168,7 +173,7 @@
       <workItem from="1683703237711" duration="1123000" />
       <workItem from="1683735743071" duration="4850000" />
       <workItem from="1683805111593" duration="23072000" />
-      <workItem from="1683868644036" duration="2351000" />
+      <workItem from="1683868644036" duration="2709000" />
     </task>
     <servers />
   </component>
