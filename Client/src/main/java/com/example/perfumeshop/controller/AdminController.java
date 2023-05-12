@@ -1,5 +1,6 @@
 package com.example.perfumeshop.controller;
 
+import com.example.perfumeshop.model.Language;
 import com.example.perfumeshop.model.Person;
 import com.example.perfumeshop.requests.PersonRequest;
 import javafx.beans.property.ReadOnlyStringWrapper;
@@ -15,9 +16,12 @@ import javafx.scene.control.TableView;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.ResourceBundle;
 
-public class AdminController implements Initializable {
+public class AdminController extends Observable implements Initializable, Observer {
     @FXML
     private TableView<Person> personTableView;
     private final ObservableList<Person> personItems = FXCollections.observableArrayList();
@@ -57,5 +61,48 @@ public class AdminController implements Initializable {
         roleColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getRole().toString()));
         personItems.addAll(personRequest.getPersons());
         personTableView.setItems(personItems);
+    }
+
+    public void setFirstNameColumn(String firstNameColumn) {
+        this.firstNameColumn.setText(firstNameColumn);
+    }
+
+    public void setLastNameColumn(String lastNameColumn) {
+        this.lastNameColumn.setText(lastNameColumn);
+    }
+
+    public void setRoleColumn(String roleColumn) {
+        this.roleColumn.setText(roleColumn);
+    }
+
+    public void setAddButton(String textButton) {
+        this.addButton.setText(textButton);
+    }
+
+    public void setDeleteButton(String deleteButton) {
+        this.deleteButton.setText(deleteButton);
+    }
+
+    public void setEditButton(String editButton) {
+        this.editButton.setText(editButton);
+    }
+
+    public void setFilterButton(String filterButton) {
+        this.filterButton.setText(filterButton);
+    }
+
+    public void setRoleChoice(List<String> roleChoice) {
+        ObservableList<String> items = FXCollections.observableArrayList(roleChoice);
+        this.roleChoice.setItems(items);
+    }
+    @Override
+    public void update(Observable o, Object arg) {
+        setAddButton(((Language) arg).getAddButton());
+        setDeleteButton(((Language) arg).getDeleteButton());
+        setEditButton(((Language) arg).getEditButton());
+        setFilterButton(((Language) arg).getFilterButton());
+        setFirstNameColumn(((Language) arg).getFirstNameColumn());
+        setLastNameColumn(((Language) arg).getLastNameColumn());
+        setRoleChoice(((Language) arg).getRoleChoice());
     }
 }

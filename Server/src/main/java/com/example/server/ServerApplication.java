@@ -1,7 +1,6 @@
 package com.example.server;
 
-import com.example.server.exportService.ExportService;
-import com.example.server.mediator.Mediator;
+import com.example.server.filesService.FilesService;
 import com.example.server.mediator.ServiceMediatorImpl;
 import com.example.server.personService.PersonService;
 import com.example.server.productService.ProductService;
@@ -16,10 +15,10 @@ public class ServerApplication {
         ServiceMediatorImpl mediator = new ServiceMediatorImpl();
         ProductService productService = new ProductService();
         PersonService personService = new PersonService();
-        ExportService exportService = new ExportService();
+        FilesService exportService = new FilesService();
         mediator.registerService("productService", productService);
         mediator.registerService("personService", personService);
-        mediator.registerService("exportService", exportService);
+        mediator.registerService("filesService", exportService);
         SpringApplication.run(ServerApplication.class, args);
     }
 

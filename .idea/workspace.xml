@@ -5,14 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d36c23ad-556d-4ac9-80e5-6191bf4bd9d4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/requests/LanguageRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/api/LanguageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/logic/LanguageLogic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/model/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/requests/PersonRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/requests/PersonRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/PersonRequest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/PersonRequest$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/PersonRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/PersonRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/api/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/api/PersonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/PersonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/LogInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/ManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/ManagerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/AdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/EmployeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/EmployeeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/LogInController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/LogInController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/ManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/ManagerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/ServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/ServerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/exportService/ExportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/FilesService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +91,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ServerApplication">
+  <component name="RunManager" selected="Application.HelloApplication">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.perfumeshop.HelloApplication" />
       <module name="PerfumeShop" />
@@ -154,8 +160,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ServerApplication" />
         <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Spring Boot.ServerApplication" />
         <item itemvalue="Spring Boot.AuthServiceApplication" />
       </list>
     </recent_temporary>
@@ -174,7 +180,7 @@
       <workItem from="1683703237711" duration="1123000" />
       <workItem from="1683735743071" duration="4850000" />
       <workItem from="1683805111593" duration="23072000" />
-      <workItem from="1683868644036" duration="3688000" />
+      <workItem from="1683868644036" duration="13321000" />
     </task>
     <servers />
   </component>
@@ -199,22 +205,19 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/EmployeeController.java</url>
-          <line>74</line>
-          <option name="timeStamp" value="24" />
+          <url>file://$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/requests/LanguageRequest.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Server/src/main/java/com/example/server/api/ProductController.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="29" />
+          <url>file://$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/logic/LanguageLogic.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/logic/PersonLogic.java</url>
-          <line>22</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="31" />
+          <url>file://$PROJECT_DIR$/Server/src/main/java/com/example/server/model/persistence/files/LanguagePersistence.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="43" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

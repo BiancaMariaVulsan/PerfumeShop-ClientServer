@@ -1,7 +1,9 @@
 package com.example.perfumeshop.controller;
 
+import com.example.perfumeshop.model.Language;
 import com.example.perfumeshop.model.ShopProduct;
 import com.example.perfumeshop.requests.ProductRequest;
+import java.util.Observable;
 import javafx.beans.property.ReadOnlyBooleanWrapper;
 import javafx.beans.property.ReadOnlyDoubleWrapper;
 import javafx.beans.property.ReadOnlyStringWrapper;
@@ -14,9 +16,10 @@ import javafx.scene.control.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Observer;
 import java.util.ResourceBundle;
 
-public class EmployeeController implements Initializable {
+public class EmployeeController extends Observable implements Initializable, Observer {
 
     @FXML
     private TableView<ShopProduct> productTableView;
@@ -93,5 +96,78 @@ public class EmployeeController implements Initializable {
         priceColumn.setCellValueFactory(cellData -> new ReadOnlyDoubleWrapper(cellData.getValue().getProduct().getPrice()));
         productItems.addAll(productRequest.getShopProducts(idShop));
         productTableView.setItems(productItems);
+    }
+
+    public void setNameColumn(String nameColumn) {
+        this.nameColumn.setText(nameColumn);
+    }
+
+    public void setBrandColumn(String brandColumn) {
+        this.brandColumn.setText(brandColumn);
+    }
+
+    public void setAvailabilityColumn(String availabilityColumn) {
+        this.availabilityColumn.setText(availabilityColumn);
+    }
+    public void setPriceColumn(String priceColumn) {
+        this.priceColumn.setText(priceColumn);
+    }
+
+    public void setAddButton(String addButton) {
+        this.addButton.setText(addButton);
+    }
+
+    public void setDeleteButton(String deleteButton) {
+        this.deleteButton.setText(deleteButton);
+    }
+
+    public void setEditButton(String editButton) {
+        this.editButton.setText(editButton);
+    }
+
+    public void setFilterButton(String filterButton) {
+        this.filterButton.setText(filterButton);
+    }
+
+    public void setSaveCSV(String saveCSV) {
+        this.saveCSV.setText(saveCSV);
+    }
+
+    public void setSaveJSON(String saveJSON) {
+        this.saveJSON.setText(saveJSON);
+    }
+
+    public void setSaveXML(String saveXML) {
+        this.saveXML.setText(saveXML);
+    }
+
+    public void setSaveTXT(String saveTXT) {
+        this.saveTXT.setText(saveTXT);
+    }
+
+    public void setSortByNameButton(String sortByNameButton) {
+        this.sortByNameButton.setText(sortByNameButton);
+    }
+
+    public void setSortByPriceButton(String sortByPriceButton) {
+        this.sortByPriceButton.setText(sortByPriceButton);
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        setAddButton(((Language) arg).getAddButton());
+        setDeleteButton(((Language) arg).getDeleteButton());
+        setEditButton(((Language) arg).getEditButton());
+        setFilterButton(((Language) arg).getFilterButton());
+        setSortByPriceButton(((Language) arg).getSortPriceButton());
+        setSortByNameButton(((Language) arg).getSortNameButton());
+        setAvailabilityColumn(((Language) arg).getAvailabilityColumn());
+        setBrandColumn(((Language) arg).getBrandColumn());
+        setNameColumn(((Language) arg).getNameColumn());
+        setPriceColumn(((Language) arg).getPriceColumn());
+        setSaveCSV(((Language) arg).getSaveCSV());
+        setSaveJSON(((Language) arg).getSaveJSON());
+        setSaveTXT(((Language) arg).getSaveTXT());
+        setSaveXML(((Language) arg).getSaveXML());
     }
 }
