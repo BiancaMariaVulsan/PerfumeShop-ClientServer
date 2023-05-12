@@ -1,6 +1,5 @@
 package com.example.perfumeshop.requests;
 
-import com.example.perfumeshop.model.ShopProduct;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -11,8 +10,6 @@ import java.net.URISyntaxException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.nio.charset.StandardCharsets;
-import java.util.List;
 
 public class PersonRequest {
     private static final String BASE_URL = "http://localhost:8080/api";

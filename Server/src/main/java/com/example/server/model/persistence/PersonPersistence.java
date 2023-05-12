@@ -11,13 +11,14 @@ public class PersonPersistence extends DatabaseObj<Person> {
 
     protected String createInsertQuery(Person employee) {
         StringBuilder sb = new StringBuilder();
-        sb.append("INSERT INTO person (firstname,lastname,role,username,password) VALUES (");
+        sb.append("INSERT INTO person (firstname,lastname,role,username,password,id_shop) VALUES (");
         sb.append("'");
         sb.append(employee.getFirstName());sb.append("','");
         sb.append(employee.getLastName());sb.append("',");
         sb.append(employee.getRole().ordinal());sb.append(",'");
         sb.append(employee.getUsername());sb.append("','");
-        sb.append(employee.getPassword());sb.append("'");
+        sb.append(employee.getPassword());sb.append("',");
+        sb.append(employee.getShopId());
         sb.append(")");
 
         return sb.toString();
@@ -34,6 +35,8 @@ public class PersonPersistence extends DatabaseObj<Person> {
         sb.append(person.getPassword());
         sb.append("',role=");
         sb.append(person.getRole().ordinal());
+        sb.append(",id_shop=");
+        sb.append(person.getShopId());
         sb.append(" WHERE id=");
         sb.append(person.getId());
         return sb.toString();
