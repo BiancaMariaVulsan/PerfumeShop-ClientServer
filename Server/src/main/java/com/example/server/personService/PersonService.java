@@ -1,6 +1,5 @@
 package com.example.server.personService;
 
-import com.example.server.api.PersonController;
 import com.example.server.mediator.Service;
 import com.example.server.model.LoginPerson;
 import com.example.server.personService.logic.LogInLogic;

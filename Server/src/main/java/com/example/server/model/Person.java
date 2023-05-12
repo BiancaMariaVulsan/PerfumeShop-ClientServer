@@ -16,13 +16,14 @@ public class Person {
     private final IntegerProperty shopId = new SimpleIntegerProperty();
     private Role role;
 
-    public Person(int id, String firstName, String lastName, Role role, String username, String password) {
+    public Person(int id, String firstName, String lastName, Role role, String username, String password, int shopId) {
         this.id.set(id);
         this.firstName.set(firstName);
         this.lastName.set(lastName);
         this.role = role;
         this.username.set(username);
         this.password.set(password);
+        this.shopId.set(shopId);
     }
 
     public Person(String firstName, String lastName, Role role, String username, String password) {

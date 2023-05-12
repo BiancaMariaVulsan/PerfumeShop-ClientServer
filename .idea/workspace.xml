@@ -5,22 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d36c23ad-556d-4ac9-80e5-6191bf4bd9d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/api/PersonController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/logic/PersonLogic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/LogInController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/model/ShopProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/model/ShopProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/requests/PersonRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/requests/PersonRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/requests/ProductRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/requests/ProductRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/LogInController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/LogInController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/PersonRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/PersonRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/ProductRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/ProductRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/api/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/api/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/ShopProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/ShopProduct.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/PersonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/logic/PersonLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/logic/PersonLogic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,22 +46,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/FACULTATE/ANIII/SEM2/CN/lab/Relay&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;87fa11931679cbce00c643a254a5e894&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/FACULTATE/ANIII/SEM2/CN/lab/Relay",
+    "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "9aa1b03934893d7134a660af4204f2a9"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\FACULTATE\ANIII\SEM2\SD\lab\Project_Client_Server\PerfumeShop-ClientServer\AuthService\src\main\java\com\example\authservice\api" />
@@ -181,7 +168,8 @@
       <workItem from="1683615961291" duration="3710000" />
       <workItem from="1683703237711" duration="1123000" />
       <workItem from="1683735743071" duration="4850000" />
-      <workItem from="1683805111593" duration="22893000" />
+      <workItem from="1683805111593" duration="23072000" />
+      <workItem from="1683868644036" duration="1404000" />
     </task>
     <servers />
   </component>
@@ -229,6 +217,24 @@
           <url>file://$PROJECT_DIR$/Server/src/main/java/com/example/server/api/ProductController.java</url>
           <line>24</line>
           <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/logic/PersonLogic.java</url>
+          <line>22</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/PersonService.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Server/src/main/java/com/example/server/api/PersonController.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -16,7 +16,7 @@ public class Employee extends Person {
     }
 
     public Employee(int id, String firstName, String lastName, String username, String password, int shopId) {
-        super(id, firstName, lastName, Role.EMPLOYEE, username, password);
+        super(id, firstName, lastName, Role.EMPLOYEE, username, password, shopId);
         this.shopId.set(shopId);
     }
 

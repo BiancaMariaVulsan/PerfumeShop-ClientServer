@@ -50,8 +50,9 @@ public class PersonPersistence extends DatabaseObj<Person> {
                 String username = resultSet.getString("username");
                 String password = resultSet.getString("password");
                 int role_nr = resultSet.getInt("role");
+                int shopId = resultSet.getInt("id_shop");
                 Role role = Role.values()[role_nr];
-                Person person = new Person(id, firstName, lastName, role, username, password);
+                Person person = new Person(id, firstName, lastName, role, username, password, shopId);
                 persons.add(person);
             }
             return persons;

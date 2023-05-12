@@ -12,7 +12,7 @@ public class PersonLogic {
     private static final PersonPersistence personPersistence = new PersonPersistence();
 
     public PersonLogic() {
-        personPersistence.findAll();
+        persons = personPersistence.findAll();
     }
 
     public List<Person> getPersons() {
@@ -20,6 +20,6 @@ public class PersonLogic {
     }
 
     public int getEmployeeShop(String username) {
-        return 1;//persons.stream().filter(p -> p.getUsername().equals(username)).toList().get(0).getShopId();
+        return persons.stream().filter(p -> p.getUsername().equals(username)).toList().get(0).getShopId();
     }
 }
