@@ -2,6 +2,7 @@ package com.example.perfumeshop.controller;
 
 import com.example.perfumeshop.model.Language;
 import com.example.perfumeshop.model.ShopProduct;
+import com.example.perfumeshop.requests.LanguageRequest;
 import com.example.perfumeshop.requests.ProductRequest;
 import java.util.Observable;
 import javafx.beans.property.ReadOnlyBooleanWrapper;
@@ -20,7 +21,6 @@ import java.util.Observer;
 import java.util.ResourceBundle;
 
 public class EmployeeController extends Observable implements Initializable, Observer {
-
     @FXML
     private TableView<ShopProduct> productTableView;
     private final ObservableList<ShopProduct> productItems = FXCollections.observableArrayList();
@@ -64,8 +64,11 @@ public class EmployeeController extends Observable implements Initializable, Obs
     public Button sortByNameButton;
     @FXML
     public Button sortByPriceButton;
+    @FXML
+    public ChoiceBox<String> languageChoice; //todo
 
     private final int idShop;
+    private Language language;
     private final ProductRequest productRequest = new ProductRequest();
 
     public EmployeeController(int idShop) {
@@ -79,6 +82,17 @@ public class EmployeeController extends Observable implements Initializable, Obs
         } catch (URISyntaxException | IOException | InterruptedException | RuntimeException e) {
             throw new RuntimeException(e);
         }
+
+        languageChoice.showingProperty().addListener((obs, wasShowing, isNowShowing) -> {
+            try {
+                LanguageRequest languageRequest = new LanguageRequest();
+                language = languageRequest.getLanguage(languageChoice.getValue());
+                setChanged();
+                this.notifyObservers(language);
+            } catch (IOException | InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
     private void populateTableProducts() throws URISyntaxException, IOException, InterruptedException {

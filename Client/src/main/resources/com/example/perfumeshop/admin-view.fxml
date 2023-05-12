@@ -18,5 +18,6 @@
       <Button fx:id="editButton" layoutX="651.0" layoutY="298.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="85.0" text="Edit" />
         <Button fx:id="filterButton" layoutX="651.0" layoutY="65.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="85.0" text="Filter" />
         <ChoiceBox fx:id="roleChoice" layoutX="484.0" layoutY="73.0" prefHeight="26.0" prefWidth="135.0" />
+      <ChoiceBox fx:id="languageChoice" layoutX="92.0" layoutY="40.0" prefWidth="150.0" />
     </children>
 </AnchorPane>

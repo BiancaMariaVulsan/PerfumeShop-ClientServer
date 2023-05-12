@@ -2,6 +2,7 @@ package com.example.perfumeshop.controller;
 
 import com.example.perfumeshop.model.Language;
 import com.example.perfumeshop.model.Product;
+import com.example.perfumeshop.requests.LanguageRequest;
 import com.example.perfumeshop.requests.ProductRequest;
 import javafx.beans.property.ReadOnlyBooleanWrapper;
 import javafx.beans.property.ReadOnlyDoubleWrapper;
@@ -63,6 +64,9 @@ public class ManagerController extends Observable implements Initializable, Obse
 
     @FXML
     private ChoiceBox<String> shopChoice;
+    @FXML
+    public ChoiceBox<String> languageChoice; //todo
+
     private final ProductRequest productRequest = new ProductRequest();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -71,6 +75,17 @@ public class ManagerController extends Observable implements Initializable, Obse
         } catch (URISyntaxException | IOException | InterruptedException | RuntimeException e) {
             throw new RuntimeException(e);
         }
+
+        languageChoice.showingProperty().addListener((obs, wasShowing, isNowShowing) -> {
+            try {
+                LanguageRequest languageRequest = new LanguageRequest();
+                Language language = languageRequest.getLanguage(languageChoice.getValue());
+                setChanged();
+                this.notifyObservers(language);
+            } catch (IOException | InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
     private void populateTableProducts() throws URISyntaxException, IOException, InterruptedException {

@@ -2,6 +2,7 @@ package com.example.perfumeshop.controller;
 
 import com.example.perfumeshop.model.Language;
 import com.example.perfumeshop.model.Person;
+import com.example.perfumeshop.requests.LanguageRequest;
 import com.example.perfumeshop.requests.PersonRequest;
 import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.FXCollections;
@@ -41,7 +42,8 @@ public class AdminController extends Observable implements Initializable, Observ
     private Button filterButton;
     @FXML
     private ChoiceBox<String> roleChoice;
-
+    @FXML
+    public ChoiceBox<String> languageChoice; //todo
 
     private final PersonRequest personRequest = new PersonRequest();
     @Override
@@ -51,6 +53,17 @@ public class AdminController extends Observable implements Initializable, Observ
         } catch (URISyntaxException | IOException | InterruptedException | RuntimeException e) {
             throw new RuntimeException(e);
         }
+
+        languageChoice.showingProperty().addListener((obs, wasShowing, isNowShowing) -> {
+            try {
+                LanguageRequest languageRequest = new LanguageRequest();
+                Language language = languageRequest.getLanguage(languageChoice.getValue());
+                setChanged();
+                this.notifyObservers(language);
+            } catch (IOException | InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
     private void populateTablePersons() throws IOException, URISyntaxException, InterruptedException {
