@@ -28,7 +28,7 @@ public class ProductRequest {
         HttpResponse<InputStream> response = client.send(request, HttpResponse.BodyHandlers.ofInputStream());
 
         ObjectMapper objectMapper = new ObjectMapper();
-        List<Product> products = objectMapper.readValue(response.body(), new TypeReference<List<Product>>(){});
+        List<Product> products = objectMapper.readValue(response.body(), new TypeReference<>(){});
         return products;
     }
 

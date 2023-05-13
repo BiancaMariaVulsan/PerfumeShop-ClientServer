@@ -12,12 +12,9 @@ import javafx.util.Callback;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Observable;
-import java.util.ResourceBundle;
+import java.util.*;
 
-public class LogInController extends Observable implements Initializable {
+public class LogInController extends Observable implements Initializable, Observer {
     @FXML
     public Label usernameLabel;
     @FXML
@@ -37,12 +34,11 @@ public class LogInController extends Observable implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initLanguageCheckBox();
+        this.addObserver(this);
 
         languageChoice.showingProperty().addListener((obs, wasShowing, isNowShowing) -> {
             try {
                 language = languageRequest.getLanguage(languageChoice.getValue());
-                setPasswordLabel(language.getPassword());
-                setUsernameLabel(language.getUsername());
                 setChanged();
                 this.notifyObservers(language);
             } catch (IOException | InterruptedException e) {
@@ -108,6 +104,8 @@ public class LogInController extends Observable implements Initializable {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+            setChanged();
+            this.notifyObservers(language);
         });
     }
 
@@ -140,5 +138,11 @@ public class LogInController extends Observable implements Initializable {
 
     public void setPasswordLabel(String passwordLabel) {
         this.passwordLabel.setText(passwordLabel);
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        setPasswordLabel(language.getPassword());
+        setUsernameLabel(language.getUsername());
     }
 }

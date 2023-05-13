@@ -1,4 +1,4 @@
-package com.example.server.productService.logic.filters;
+package com.example.server.productService.specification;
 
 public interface Specification<T> {
     boolean isSatisfiedBy(T entity);

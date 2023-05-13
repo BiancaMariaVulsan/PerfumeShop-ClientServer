@@ -15,7 +15,7 @@ import java.util.List;
 
 public class PersonRequest {
     private static final String BASE_URL = "http://localhost:8080/api";
-    private HttpClient client = HttpClient.newHttpClient();
+    private final HttpClient client = HttpClient.newHttpClient();
 
     public Integer getEmployeeShop(String username) throws IOException, InterruptedException, URISyntaxException {
         HttpRequest request = HttpRequest.newBuilder()

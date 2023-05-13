@@ -1,4 +1,4 @@
-package com.example.server.productService.logic.filters;
+package com.example.server.productService.specification;
 
 public class NotSpecification<T> implements Specification<T> {
     private Specification<T> spec;

@@ -1,9 +1,9 @@
 package com.example.server.personService;
 
 import com.example.server.mediator.Handler;
-import com.example.server.personService.requests.GetEmployeeShopRequest;
+import com.example.server.mediator.requests.persons.GetEmployeeShopRequest;
 import com.example.server.mediator.Request;
-import com.example.server.personService.responses.GetEmployeeShopResponse;
+import com.example.server.mediator.responses.persons.GetEmployeeShopResponse;
 import com.example.server.mediator.Response;
 import com.example.server.model.persistence.PersonPersistence;
 

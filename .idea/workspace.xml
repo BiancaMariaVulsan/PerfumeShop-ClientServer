@@ -5,26 +5,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d36c23ad-556d-4ac9-80e5-6191bf4bd9d4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/requests/language/GetLanguageRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/requests/products/FilterProductsRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/requests/products/GetAllProductsRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/requests/products/GetShopProductsRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/responses/language/GetLanguageResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/responses/products/FilterProductsResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/responses/products/GetAllProductsResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/responses/products/GetShopProductsResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/FilterProductsHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/GetAllProductsHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/GetShopProductsHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/requests/PersonRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/requests/PersonRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/requests/ProductRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/requests/ProductRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/PersonRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/PersonRequest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/ServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/ServerApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/api/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/api/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/api/LanguageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/api/LanguageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/api/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/api/PersonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/FilesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/FilesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/Handler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/api/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/api/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/FilesService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/logic/LanguageLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/GetLanguageHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/IMediator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/IMediator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/Mediator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/Mediator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/requests/GetEmployeeShopRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/requests/GetEmployeeShopRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/requests/GetPersonsRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/requests/GetPersonsRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/requests/LoginPersonRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/requests/LoginPersonRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/requests/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/Request.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/responses/GetEmployeeShopResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/responses/GetEmployeeShopResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/responses/GetPersonsResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/responses/GetPersonsResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/responses/LoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/responses/LoginResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/responses/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/Response.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/GetEmployeeShopHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/GetEmployeeShopHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/GetPersonsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/GetPersonsHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/LoginPersonHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/LoginPersonHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/requests/GetEmployeeShopRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/requests/persons/GetEmployeeShopRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/requests/GetPersonsRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/requests/persons/GetPersonsRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/requests/LoginPersonRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/requests/persons/LoginPersonRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/responses/GetEmployeeShopResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/responses/persons/GetEmployeeShopResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/responses/GetPersonsResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/responses/persons/GetPersonsResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/responses/LoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/responses/persons/LoginResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/ProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/logic/ProductLogic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/logic/filters/AndSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/specification/AndSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/logic/filters/BrandSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/specification/BrandSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/logic/filters/LowPriceSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/specification/LowPriceSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/logic/filters/NotSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/specification/NotSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/logic/filters/OrSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/specification/OrSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/logic/filters/Specification.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/specification/Specification.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +54,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -187,7 +207,7 @@
       <workItem from="1683735743071" duration="4850000" />
       <workItem from="1683805111593" duration="23072000" />
       <workItem from="1683868644036" duration="19553000" />
-      <workItem from="1683969243733" duration="480000" />
+      <workItem from="1683969243733" duration="8476000" />
     </task>
     <servers />
   </component>
@@ -212,19 +232,19 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/requests/LanguageRequest.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/logic/LanguageLogic.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Server/src/main/java/com/example/server/model/persistence/files/LanguagePersistence.java</url>
           <line>16</line>
           <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Server/src/main/java/com/example/server/productService/GetAllProductsHandler.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/GetLanguageHandler.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

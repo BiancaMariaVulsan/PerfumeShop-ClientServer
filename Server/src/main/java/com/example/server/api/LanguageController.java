@@ -2,6 +2,9 @@ package com.example.server.api;
 
 import com.example.server.mediator.IMediator;
 import com.example.server.mediator.Mediator;
+import com.example.server.mediator.requests.language.GetLanguageRequest;
+import com.example.server.mediator.requests.products.GetShopProductsRequest;
+import com.example.server.mediator.responses.language.GetLanguageResponse;
 import com.example.server.model.Language;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,8 +19,9 @@ public class LanguageController {
 
     @GetMapping("/languages")
     public ResponseEntity<Language> getShop(@RequestParam String language) {
-        //Language lng = (Language) mediator.notify("filesService", language);
-        //return ResponseEntity.ok(lng);
-        return null;
+        GetLanguageRequest request = new GetLanguageRequest();
+        request.setLanguage(language);
+        GetLanguageResponse response = (GetLanguageResponse) mediator.send(request);
+        return ResponseEntity.ok(response.getLanguage());
     }
 }

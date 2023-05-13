@@ -1,4 +1,4 @@
-package com.example.server.personService.responses;
+package com.example.server.mediator.responses.persons;
 
 import com.example.server.mediator.Response;
 import com.example.server.model.Person;

@@ -1,4 +1,4 @@
-package com.example.server.productService.logic.filters;
+package com.example.server.productService.specification;
 
 public class AndSpecification<T> implements Specification<T> {
     private final Specification<T>[] specs;
