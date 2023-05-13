@@ -34,11 +34,11 @@ public class LogInController extends Observable implements Initializable, Observ
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            language = languageRequest.getLanguage(languageChoice.getValue());
+            language = languageRequest.getLanguage("English");
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
-        initLanguageCheckBox();
+        Controller.initLanguageCheckBox(languageChoice);
         this.addObserver(this);
 
         languageChoice.showingProperty().addListener((obs, wasShowing, isNowShowing) -> {
@@ -123,19 +123,7 @@ public class LogInController extends Observable implements Initializable, Observ
         return -1;
     }
 
-    private void initLanguageCheckBox() {
-        List<String> languages = new ArrayList<>() {
-            {
-                add("English");
-                add("Romanian");
-                add("German");
-            }
-        };
-        for(String language: languages) {
-            languageChoice.getItems().add(language);
-        }
-        languageChoice.setValue(languages.get(0));
-    }
+
 
     public void setUsernameLabel(String usernameLabel) {
         this.usernameLabel.setText(usernameLabel);

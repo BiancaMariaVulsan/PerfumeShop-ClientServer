@@ -12,14 +12,12 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.util.Callback;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.Comparator;
-import java.util.Observable;
-import java.util.Observer;
-import java.util.ResourceBundle;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class EmployeeController extends Observable implements Initializable, Observer {
@@ -67,11 +65,12 @@ public class EmployeeController extends Observable implements Initializable, Obs
     @FXML
     public Button sortByPriceButton;
     @FXML
-    public ChoiceBox<String> languageChoice; //todo
+    public ChoiceBox<String> languageChoice;
 
     private final int idShop;
     private Language language;
     private final ProductRequest productRequest = new ProductRequest();
+    private final LanguageRequest languageRequest = new LanguageRequest();
 
     public EmployeeController(int idShop) {
         this.idShop = idShop;
@@ -79,15 +78,21 @@ public class EmployeeController extends Observable implements Initializable, Obs
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        this.addObserver(this);
+        Controller.initLanguageCheckBox(languageChoice);
         try {
             populateTableProducts();
         } catch (URISyntaxException | IOException | InterruptedException | RuntimeException e) {
             throw new RuntimeException(e);
         }
+        try {
+            language = languageRequest.getLanguage("English");
+        } catch (IOException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
         languageChoice.showingProperty().addListener((obs, wasShowing, isNowShowing) -> {
             try {
-                LanguageRequest languageRequest = new LanguageRequest();
                 language = languageRequest.getLanguage(languageChoice.getValue());
                 setChanged();
                 this.notifyObservers(language);
@@ -105,6 +110,23 @@ public class EmployeeController extends Observable implements Initializable, Obs
             productItems.setAll(productItems.stream()
                     .sorted(Comparator.comparing(sp -> sp.getProduct().getPrice()))
                     .collect(Collectors.toList()));
+        });
+        addButton.setOnAction(e -> {
+            AddProductController addProductController = new AddProductController();
+            this.addObserver(addProductController);
+            Callback<Class<?>, Object> controllerFactory = type -> {
+                if (type == AddProductController.class) {
+                    return addProductController;
+                } else {
+                    try {
+                        return type.newInstance();
+                    } catch (Exception exc) {
+                        System.err.println("Could not load register controller " + type.getName());
+                        throw new RuntimeException(exc);
+                    }
+                }
+            };
+            Controller.loadFXML("/com/example/perfumeshop/add-product-view.fxml", controllerFactory);
         });
     }
 

@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.util.Callback;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -43,26 +44,50 @@ public class AdminController extends Observable implements Initializable, Observ
     @FXML
     private ChoiceBox<String> roleChoice;
     @FXML
-    public ChoiceBox<String> languageChoice; //todo
+    public ChoiceBox<String> languageChoice;
+    private Language language;
+    private final LanguageRequest languageRequest = new LanguageRequest();
 
     private final PersonRequest personRequest = new PersonRequest();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        this.addObserver(this);
+        Controller.initLanguageCheckBox(languageChoice);
         try {
             populateTablePersons();
         } catch (URISyntaxException | IOException | InterruptedException | RuntimeException e) {
             throw new RuntimeException(e);
         }
-
+        try {
+            language = languageRequest.getLanguage("English");
+        } catch (IOException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         languageChoice.showingProperty().addListener((obs, wasShowing, isNowShowing) -> {
             try {
-                LanguageRequest languageRequest = new LanguageRequest();
-                Language language = languageRequest.getLanguage(languageChoice.getValue());
+                language = languageRequest.getLanguage(languageChoice.getValue());
                 setChanged();
                 this.notifyObservers(language);
             } catch (IOException | InterruptedException e) {
                 throw new RuntimeException(e);
             }
+        });
+        addButton.setOnAction(e -> {
+            RegisterController registerController = new RegisterController();
+            this.addObserver(registerController);
+            Callback<Class<?>, Object> controllerFactory = type -> {
+                if (type == RegisterController.class) {
+                    return registerController;
+                } else {
+                    try {
+                        return type.newInstance();
+                    } catch (Exception exc) {
+                        System.err.println("Could not load register controller " + type.getName());
+                        throw new RuntimeException(exc);
+                    }
+                }
+            };
+            Controller.loadFXML("/com/example/perfumeshop/register-view.fxml", controllerFactory);
         });
     }
 

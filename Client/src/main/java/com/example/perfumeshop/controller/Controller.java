@@ -13,6 +13,8 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class Controller {
@@ -44,5 +46,19 @@ public class Controller {
         confirm.setDefaultButton(false);
         confirm.setStyle("-fx-focus-color: transparent; -fx-faint-focus-color: transparent;");
         return alert.showAndWait();
+    }
+
+    public static void initLanguageCheckBox(ChoiceBox<String> languageChoice) {
+        List<String> languages = new ArrayList<>() {
+            {
+                add("English");
+                add("Romanian");
+                add("German");
+            }
+        };
+        for(String language: languages) {
+            languageChoice.getItems().add(language);
+        }
+        languageChoice.setValue(languages.get(0));
     }
 }

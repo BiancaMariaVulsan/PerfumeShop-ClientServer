@@ -63,21 +63,29 @@ public class ManagerController extends Observable implements Initializable, Obse
     @FXML
     private ChoiceBox<String> shopChoice;
     @FXML
-    public ChoiceBox<String> languageChoice; //todo
+    public ChoiceBox<String> languageChoice;
+    private final LanguageRequest languageRequest = new LanguageRequest();
+    private Language language;
+
 
     private final ProductRequest productRequest = new ProductRequest();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        this.addObserver(this);
+        Controller.initLanguageCheckBox(languageChoice);
         try {
             populateTableProducts(productRequest.getAllProducts());
         } catch (URISyntaxException | IOException | InterruptedException | RuntimeException e) {
             throw new RuntimeException(e);
         }
-
+        try {
+            language = languageRequest.getLanguage("English");
+        } catch (IOException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         languageChoice.showingProperty().addListener((obs, wasShowing, isNowShowing) -> {
             try {
-                LanguageRequest languageRequest = new LanguageRequest();
-                Language language = languageRequest.getLanguage(languageChoice.getValue());
+                language = languageRequest.getLanguage(languageChoice.getValue());
                 setChanged();
                 this.notifyObservers(language);
             } catch (IOException | InterruptedException e) {
@@ -102,7 +110,6 @@ public class ManagerController extends Observable implements Initializable, Obse
         productTableView.getItems().clear();
         nameColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getName()));
         brandColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getBrand()));
-        //todo: check why it displays false for all the products
         List<Product> availableProducts = productRequest.getProductsAvailableInTheChain();
         availabilityColumn.setCellValueFactory(cellData -> new ReadOnlyBooleanWrapper(availableProducts.stream().anyMatch(p -> p.getId() == cellData.getValue().getId())));
         priceColumn.setCellValueFactory(cellData -> new ReadOnlyDoubleWrapper(cellData.getValue().getPrice()));
