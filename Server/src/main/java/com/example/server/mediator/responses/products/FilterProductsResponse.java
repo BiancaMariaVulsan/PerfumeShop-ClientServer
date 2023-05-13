@@ -11,4 +11,8 @@ public class FilterProductsResponse implements Response {
     public void setFilteredProducts(List<Product> filteredProducts) {
         this.filteredProducts = filteredProducts;
     }
+
+    public List<Product> getFilteredProducts() {
+        return filteredProducts;
+    }
 }

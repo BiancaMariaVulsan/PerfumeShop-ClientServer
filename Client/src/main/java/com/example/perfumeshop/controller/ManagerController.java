@@ -16,6 +16,7 @@ import javafx.scene.control.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.ResourceBundle;
@@ -71,7 +72,7 @@ public class ManagerController extends Observable implements Initializable, Obse
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            populateTableProducts();
+            populateTableProducts(productRequest.getAllProducts());
         } catch (URISyntaxException | IOException | InterruptedException | RuntimeException e) {
             throw new RuntimeException(e);
         }
@@ -86,9 +87,20 @@ public class ManagerController extends Observable implements Initializable, Obse
                 throw new RuntimeException(e);
             }
         });
+        filterButton.setOnAction(e -> {
+            try {
+                float price = 0;
+                if(!priceFilter.getText().isEmpty()) {
+                    price = Float.parseFloat(priceFilter.getText());
+                }
+                populateTableProducts(productRequest.filterProducts(nameFilter.getText(), brandFilter.getText(), availabilityFilter.isSelected(), price));
+            } catch (URISyntaxException | IOException | InterruptedException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
     }
 
-    private void populateTableProducts() throws URISyntaxException, IOException, InterruptedException {
+    private void populateTableProducts(List<Product> products) throws URISyntaxException, IOException, InterruptedException {
         productItems.clear();
         productTableView.getItems().clear();
         nameColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getName()));
@@ -101,7 +113,7 @@ public class ManagerController extends Observable implements Initializable, Obse
             }
         });
         priceColumn.setCellValueFactory(cellData -> new ReadOnlyDoubleWrapper(cellData.getValue().getPrice()));
-        productItems.addAll(productRequest.getAllProducts());
+        productItems.addAll(products);
         productTableView.setItems(productItems);
     }
 

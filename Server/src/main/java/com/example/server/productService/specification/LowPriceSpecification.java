@@ -4,7 +4,7 @@ import com.example.server.model.Product;
 
 public class LowPriceSpecification implements Specification<Product> {
 
-    private double maxPrice;
+    private final double maxPrice;
 
     public LowPriceSpecification(double maxPrice) {
         this.maxPrice = maxPrice;
@@ -12,6 +12,6 @@ public class LowPriceSpecification implements Specification<Product> {
 
     @Override
     public boolean isSatisfiedBy(Product product) {
-        return product.getPrice() > 0;
+        return (maxPrice==0 || product.getPrice() < maxPrice);
     }
 }

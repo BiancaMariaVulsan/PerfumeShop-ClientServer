@@ -2,17 +2,20 @@ package com.example.server.api;
 
 import com.example.server.mediator.IMediator;
 import com.example.server.mediator.Mediator;
+import com.example.server.mediator.requests.persons.LoginPersonRequest;
+import com.example.server.mediator.requests.products.FilterProductsRequest;
 import com.example.server.mediator.requests.products.GetAllProductsRequest;
 import com.example.server.mediator.requests.products.GetShopProductsRequest;
+import com.example.server.mediator.responses.persons.LoginResponse;
+import com.example.server.mediator.responses.products.FilterProductsResponse;
 import com.example.server.mediator.responses.products.GetAllProductsResponse;
 import com.example.server.mediator.responses.products.GetShopProductsResponse;
+import com.example.server.model.Filters;
+import com.example.server.model.LoginPerson;
 import com.example.server.model.Product;
 import com.example.server.model.ShopProduct;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -36,6 +39,14 @@ public class ProductController {
         GetShopProductsResponse response = (GetShopProductsResponse) mediator.send(request);
 
         return ResponseEntity.ok(response.getShopProducts());
+    }
+
+    @PostMapping("/filter_products")
+    public ResponseEntity<List<Product>> login(@RequestBody Filters filters) {
+        FilterProductsRequest filterProductsRequest = new FilterProductsRequest(filters.getName(), filters.getBrand(), filters.getPrice(), filters.isAvailability());
+        FilterProductsResponse response = (FilterProductsResponse) mediator.send(filterProductsRequest);
+
+        return ResponseEntity.ok(response.getFilteredProducts());
     }
 }
 

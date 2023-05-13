@@ -7,10 +7,7 @@ import com.example.server.model.Product;
 import com.example.server.model.persistence.ProductPersistence;
 import com.example.server.mediator.requests.products.FilterProductsRequest;
 import com.example.server.mediator.responses.products.FilterProductsResponse;
-import com.example.server.productService.specification.AndSpecification;
-import com.example.server.productService.specification.BrandSpecification;
-import com.example.server.productService.specification.LowPriceSpecification;
-import com.example.server.productService.specification.Specification;
+import com.example.server.productService.specification.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,9 +29,10 @@ public FilterProductsHandler() {
 
         LowPriceSpecification lowPrice= new LowPriceSpecification(price);
         BrandSpecification brandSpec = new BrandSpecification(brand);
-        // todo: complete with other filters
+        NameSpecification nameSpecification = new NameSpecification(name);
+        ChainAvailabilitySpecification availabilitySpecification = new ChainAvailabilitySpecification(availability);
 
-        Specification<Product> filterSpec = new AndSpecification<>(lowPrice, brandSpec);
+        Specification<Product> filterSpec = new AndSpecification<>(lowPrice, brandSpec, nameSpecification, availabilitySpecification);
 
         List<Product> allProducts = productPersistence.findAll();
         List<Product> filteredProducts = new ArrayList<>();

@@ -18,14 +18,6 @@ public class LoginRequest {
                 .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
                 .build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        String role = response.body();
-        if (response.statusCode() == 200) {
-            System.out.println("Login successful");
-            System.out.println("Role: " + role);
-        } else {
-            System.out.println("Login failed");
-            System.out.println("Token: " + role);
-        }
-        return role;
+        return response.body();
     }
 }

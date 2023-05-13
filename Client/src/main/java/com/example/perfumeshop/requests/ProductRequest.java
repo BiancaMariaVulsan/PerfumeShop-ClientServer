@@ -16,10 +16,9 @@ import java.util.List;
 
 public class ProductRequest {
     private static final String BASE_URL = "http://localhost:8080/api";
+    private final HttpClient client = HttpClient.newHttpClient();
 
     public List<Product> getAllProducts() throws URISyntaxException, IOException, InterruptedException {
-        HttpClient client = HttpClient.newHttpClient();
-
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(new URI(BASE_URL + "/products"))
                 .GET()
@@ -28,13 +27,10 @@ public class ProductRequest {
         HttpResponse<InputStream> response = client.send(request, HttpResponse.BodyHandlers.ofInputStream());
 
         ObjectMapper objectMapper = new ObjectMapper();
-        List<Product> products = objectMapper.readValue(response.body(), new TypeReference<>(){});
-        return products;
+        return objectMapper.readValue(response.body(), new TypeReference<>(){});
     }
 
     public List<ShopProduct> getShopProducts(int shopId) throws URISyntaxException, IOException, InterruptedException {
-        HttpClient client = HttpClient.newHttpClient();
-
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(new URI(BASE_URL + "/shop_products?shopId=" + shopId))
                 .GET()
@@ -43,22 +39,36 @@ public class ProductRequest {
         HttpResponse<InputStream> response = client.send(request, HttpResponse.BodyHandlers.ofInputStream());
 
         ObjectMapper objectMapper = new ObjectMapper();
-        List<ShopProduct> products = objectMapper.readValue(response.body(), new TypeReference<>(){});
-        return products;
+        return objectMapper.readValue(response.body(), new TypeReference<>(){});
     }
 
 
     // todo: handle this request
     public boolean isAvailableInTheChain(int productId) throws URISyntaxException, IOException, InterruptedException{
-        HttpClient client = HttpClient.newHttpClient();
-
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(new URI(BASE_URL + "/products/available/" + productId))
                 .GET()
                 .build();
 
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println(response.body());
+//        System.out.println(response.body());
         return Boolean.getBoolean(response.body());
+    }
+
+    public List<Product> filterProducts(String name, String brand, boolean availability, float price) throws URISyntaxException, IOException, InterruptedException {
+        String jsonBody = "{\"name\":\"" + name + "\"," +
+                "\"brand\":\"" + brand + "\"," +
+                "\"availability\":" + availability + "," +
+                "\"price\":" + price + "}";
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(new URI(BASE_URL + "/filter_products"))
+                .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
+                .header("Content-Type", "application/json")
+                .build();
+
+        HttpResponse<InputStream> response = client.send(request, HttpResponse.BodyHandlers.ofInputStream());
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        return objectMapper.readValue(response.body(), new TypeReference<>(){});
     }
 }

@@ -1,14 +1,12 @@
-package com.example.server.mediator.requests.products;
+package com.example.server.model;
 
-import com.example.server.mediator.Request;
-
-public class FilterProductsRequest implements Request {
+public class Filters {
     private String name;
     private String brand;
     private float price;
     private boolean availability;
 
-    public FilterProductsRequest(String name, String brand, float price, boolean availability) {
+    public Filters(String name, String brand, float price, boolean availability) {
         this.name = name;
         this.brand = brand;
         this.price = price;

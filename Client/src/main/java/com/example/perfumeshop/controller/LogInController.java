@@ -33,6 +33,11 @@ public class LogInController extends Observable implements Initializable, Observ
     private final LanguageRequest languageRequest = new LanguageRequest();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            language = languageRequest.getLanguage(languageChoice.getValue());
+        } catch (IOException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         initLanguageCheckBox();
         this.addObserver(this);
 
