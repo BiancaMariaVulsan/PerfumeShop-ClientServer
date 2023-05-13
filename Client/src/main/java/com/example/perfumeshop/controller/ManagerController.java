@@ -16,10 +16,7 @@ import javafx.scene.control.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.List;
-import java.util.Observable;
-import java.util.Observer;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class ManagerController extends Observable implements Initializable, Observer {
     @FXML
@@ -105,13 +102,9 @@ public class ManagerController extends Observable implements Initializable, Obse
         productTableView.getItems().clear();
         nameColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getName()));
         brandColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getBrand()));
-        availabilityColumn.setCellValueFactory(cellData -> {
-            try {
-                return new ReadOnlyBooleanWrapper(productRequest.isAvailableInTheChain(cellData.getValue().getId()));
-            } catch (URISyntaxException | IOException | InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        });
+        //todo: check why it displays false for all the products
+        List<Product> availableProducts = productRequest.getProductsAvailableInTheChain();
+        availabilityColumn.setCellValueFactory(cellData -> new ReadOnlyBooleanWrapper(availableProducts.stream().anyMatch(p -> p.getId() == cellData.getValue().getId())));
         priceColumn.setCellValueFactory(cellData -> new ReadOnlyDoubleWrapper(cellData.getValue().getPrice()));
         productItems.addAll(products);
         productTableView.setItems(productItems);

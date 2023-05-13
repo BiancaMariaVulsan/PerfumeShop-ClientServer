@@ -4,7 +4,6 @@ import com.example.perfumeshop.model.Language;
 import com.example.perfumeshop.model.ShopProduct;
 import com.example.perfumeshop.requests.LanguageRequest;
 import com.example.perfumeshop.requests.ProductRequest;
-import java.util.Observable;
 import javafx.beans.property.ReadOnlyBooleanWrapper;
 import javafx.beans.property.ReadOnlyDoubleWrapper;
 import javafx.beans.property.ReadOnlyStringWrapper;
@@ -17,8 +16,11 @@ import javafx.scene.control.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Comparator;
+import java.util.Observable;
 import java.util.Observer;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 public class EmployeeController extends Observable implements Initializable, Observer {
     @FXML
@@ -93,6 +95,17 @@ public class EmployeeController extends Observable implements Initializable, Obs
                 throw new RuntimeException(e);
             }
         });
+        sortByNameButton.setOnAction(e -> {
+            productItems.setAll(productItems.stream()
+                    .sorted(Comparator.comparing(sp -> sp.getProduct().getName()))
+                    .collect(Collectors.toList()));
+
+        });
+        sortByPriceButton.setOnAction(e -> {
+            productItems.setAll(productItems.stream()
+                    .sorted(Comparator.comparing(sp -> sp.getProduct().getPrice()))
+                    .collect(Collectors.toList()));
+        });
     }
 
     private void populateTableProducts() throws URISyntaxException, IOException, InterruptedException {
@@ -100,13 +113,7 @@ public class EmployeeController extends Observable implements Initializable, Obs
         productTableView.getItems().clear();
         nameColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getProduct().getName()));
         brandColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getProduct().getBrand()));
-        availabilityColumn.setCellValueFactory(cellData -> {
-            try {
-                return new ReadOnlyBooleanWrapper(productRequest.isAvailableInTheChain(cellData.getValue().getProduct().getId()));
-            } catch (URISyntaxException | IOException | InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        });
+        availabilityColumn.setCellValueFactory(cellData -> new ReadOnlyBooleanWrapper(cellData.getValue().getStock() > 0));
         priceColumn.setCellValueFactory(cellData -> new ReadOnlyDoubleWrapper(cellData.getValue().getProduct().getPrice()));
         productItems.addAll(productRequest.getShopProducts(idShop));
         productTableView.setItems(productItems);

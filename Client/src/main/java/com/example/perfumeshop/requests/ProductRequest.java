@@ -42,17 +42,16 @@ public class ProductRequest {
         return objectMapper.readValue(response.body(), new TypeReference<>(){});
     }
 
-
-    // todo: handle this request
-    public boolean isAvailableInTheChain(int productId) throws URISyntaxException, IOException, InterruptedException{
+    public List<Product> getProductsAvailableInTheChain() throws URISyntaxException, IOException, InterruptedException{
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(new URI(BASE_URL + "/products/available/" + productId))
+                .uri(new URI(BASE_URL + "/products/available"))
                 .GET()
                 .build();
 
-        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-//        System.out.println(response.body());
-        return Boolean.getBoolean(response.body());
+        HttpResponse<InputStream> response = client.send(request, HttpResponse.BodyHandlers.ofInputStream());
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        return objectMapper.readValue(response.body(), new TypeReference<>(){});
     }
 
     public List<Product> filterProducts(String name, String brand, boolean availability, float price) throws URISyntaxException, IOException, InterruptedException {

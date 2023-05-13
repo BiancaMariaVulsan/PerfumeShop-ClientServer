@@ -5,10 +5,12 @@ import com.example.server.mediator.Mediator;
 import com.example.server.mediator.requests.persons.LoginPersonRequest;
 import com.example.server.mediator.requests.products.FilterProductsRequest;
 import com.example.server.mediator.requests.products.GetAllProductsRequest;
+import com.example.server.mediator.requests.products.GetProductsAvailableInTheChainRequest;
 import com.example.server.mediator.requests.products.GetShopProductsRequest;
 import com.example.server.mediator.responses.persons.LoginResponse;
 import com.example.server.mediator.responses.products.FilterProductsResponse;
 import com.example.server.mediator.responses.products.GetAllProductsResponse;
+import com.example.server.mediator.responses.products.GetProductsAvailableInTheChainResponse;
 import com.example.server.mediator.responses.products.GetShopProductsResponse;
 import com.example.server.model.Filters;
 import com.example.server.model.LoginPerson;
@@ -39,6 +41,14 @@ public class ProductController {
         GetShopProductsResponse response = (GetShopProductsResponse) mediator.send(request);
 
         return ResponseEntity.ok(response.getShopProducts());
+    }
+
+    @GetMapping("/products/available")
+    public ResponseEntity<List<Product>> getProductsAvailableInTheChain() {
+        GetProductsAvailableInTheChainRequest request = new GetProductsAvailableInTheChainRequest();
+        GetProductsAvailableInTheChainResponse response = (GetProductsAvailableInTheChainResponse) mediator.send(request);
+
+        return ResponseEntity.ok(response.getProducts());
     }
 
     @PostMapping("/filter_products")
