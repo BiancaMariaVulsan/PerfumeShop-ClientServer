@@ -1,4 +1,6 @@
-package com.example.server.mediator.requests;
+package com.example.server.personService.requests;
+
+import com.example.server.mediator.Request;
 
 public class GetEmployeeShopRequest implements Request {
     public String getUsername() {

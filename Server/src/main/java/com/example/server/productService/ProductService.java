@@ -1,9 +1,8 @@
 package com.example.server.productService;
 
 import com.example.server.mediator.Handler;
-import com.example.server.mediator.requests.Request;
-import com.example.server.mediator.responses.Response;
-import com.example.server.productService.logic.ProductLogic;
+import com.example.server.mediator.Request;
+import com.example.server.mediator.Response;
 
 public class ProductService implements Handler {
     @Override

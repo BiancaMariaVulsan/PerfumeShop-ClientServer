@@ -1,7 +1,5 @@
 package com.example.server.mediator;
 
-import com.example.server.mediator.requests.Request;
-import com.example.server.mediator.responses.Response;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;

@@ -1,9 +1,9 @@
 package com.example.server;
 
 import com.example.server.mediator.Mediator;
-import com.example.server.mediator.requests.GetEmployeeShopRequest;
-import com.example.server.mediator.requests.GetPersonsRequest;
-import com.example.server.mediator.requests.LoginPersonRequest;
+import com.example.server.personService.requests.GetEmployeeShopRequest;
+import com.example.server.personService.requests.GetPersonsRequest;
+import com.example.server.personService.requests.LoginPersonRequest;
 import com.example.server.personService.GetEmployeeShopHandler;
 import com.example.server.personService.GetPersonsHandler;
 import com.example.server.personService.LoginPersonHandler;

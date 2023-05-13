@@ -1,4 +1,6 @@
-package com.example.server.mediator.responses;
+package com.example.server.personService.responses;
+
+import com.example.server.mediator.Response;
 
 public class GetEmployeeShopResponse implements Response {
     public int getShopId() {

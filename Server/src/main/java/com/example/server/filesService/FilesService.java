@@ -1,9 +1,8 @@
 package com.example.server.filesService;
 
-import com.example.server.filesService.logic.LanguageLogic;
 import com.example.server.mediator.Handler;
-import com.example.server.mediator.requests.Request;
-import com.example.server.mediator.responses.Response;
+import com.example.server.mediator.Request;
+import com.example.server.mediator.Response;
 
 public class FilesService implements Handler {
     @Override

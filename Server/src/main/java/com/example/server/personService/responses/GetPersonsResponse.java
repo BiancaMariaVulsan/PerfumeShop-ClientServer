@@ -1,5 +1,6 @@
-package com.example.server.mediator.responses;
+package com.example.server.personService.responses;
 
+import com.example.server.mediator.Response;
 import com.example.server.model.Person;
 
 import java.util.List;

@@ -2,9 +2,8 @@ package com.example.server.api;
 
 import com.example.server.mediator.IMediator;
 import com.example.server.mediator.Mediator;
-import com.example.server.mediator.requests.LoginPersonRequest;
-import com.example.server.mediator.requests.Request;
-import com.example.server.mediator.responses.LoginResponse;
+import com.example.server.personService.requests.LoginPersonRequest;
+import com.example.server.personService.responses.LoginResponse;
 import com.example.server.model.LoginPerson;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

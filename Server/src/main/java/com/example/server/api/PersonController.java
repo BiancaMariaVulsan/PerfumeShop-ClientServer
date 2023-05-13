@@ -2,10 +2,10 @@ package com.example.server.api;
 
 import com.example.server.mediator.IMediator;
 import com.example.server.mediator.Mediator;
-import com.example.server.mediator.requests.GetEmployeeShopRequest;
-import com.example.server.mediator.requests.GetPersonsRequest;
-import com.example.server.mediator.responses.GetEmployeeShopResponse;
-import com.example.server.mediator.responses.GetPersonsResponse;
+import com.example.server.personService.requests.GetEmployeeShopRequest;
+import com.example.server.personService.requests.GetPersonsRequest;
+import com.example.server.personService.responses.GetEmployeeShopResponse;
+import com.example.server.personService.responses.GetPersonsResponse;
 import com.example.server.model.Person;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
