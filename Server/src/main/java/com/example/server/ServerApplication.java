@@ -1,6 +1,7 @@
 package com.example.server;
 
 import com.example.server.filesService.GetLanguageHandler;
+import com.example.server.filesService.SaveProductsHandler;
 import com.example.server.mediator.Mediator;
 import com.example.server.mediator.requests.language.GetLanguageRequest;
 import com.example.server.mediator.requests.persons.GetEmployeeShopRequest;
@@ -32,6 +33,8 @@ public class ServerApplication {
         mediator.registerHandler(AddProductRequest.class, AddProductHandler.class);
 
         mediator.registerHandler(GetLanguageRequest.class, GetLanguageHandler.class);
+
+        mediator.registerHandler(SaveProductsRequest.class, SaveProductsHandler.class);
 
         SpringApplication.run(ServerApplication.class, args);
     }

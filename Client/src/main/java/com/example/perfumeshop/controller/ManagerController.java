@@ -103,6 +103,24 @@ public class ManagerController extends Observable implements Initializable, Obse
                 throw new RuntimeException(ex);
             }
         });
+        saveCSV.setOnAction(e -> {
+
+        });
+        saveJSON.setOnAction(e -> {
+            ProductRequest productRequest = new ProductRequest();
+            try {
+                productRequest.saveProducts(productItems, "products.json", "json");
+            } catch (IOException | InterruptedException | URISyntaxException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+        saveXML.setOnAction(e -> {
+
+        });
+        saveTXT.setOnAction(e -> {
+
+        });
+
     }
 
     private void populateTableProducts(List<Product> products) throws URISyntaxException, IOException, InterruptedException {
