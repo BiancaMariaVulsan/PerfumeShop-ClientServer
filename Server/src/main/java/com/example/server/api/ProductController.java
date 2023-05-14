@@ -2,19 +2,11 @@ package com.example.server.api;
 
 import com.example.server.mediator.IMediator;
 import com.example.server.mediator.Mediator;
-import com.example.server.mediator.requests.persons.LoginPersonRequest;
-import com.example.server.mediator.requests.products.FilterProductsRequest;
-import com.example.server.mediator.requests.products.GetAllProductsRequest;
-import com.example.server.mediator.requests.products.GetProductsAvailableInTheChainRequest;
-import com.example.server.mediator.requests.products.GetShopProductsRequest;
-import com.example.server.mediator.responses.persons.LoginResponse;
-import com.example.server.mediator.responses.products.FilterProductsResponse;
-import com.example.server.mediator.responses.products.GetAllProductsResponse;
-import com.example.server.mediator.responses.products.GetProductsAvailableInTheChainResponse;
-import com.example.server.mediator.responses.products.GetShopProductsResponse;
+import com.example.server.mediator.requests.products.*;
+import com.example.server.mediator.responses.products.*;
 import com.example.server.model.Filters;
-import com.example.server.model.LoginPerson;
 import com.example.server.model.Product;
+import com.example.server.model.ProductInShop;
 import com.example.server.model.ShopProduct;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -57,6 +49,14 @@ public class ProductController {
         FilterProductsResponse response = (FilterProductsResponse) mediator.send(filterProductsRequest);
 
         return ResponseEntity.ok(response.getFilteredProducts());
+    }
+
+    @PostMapping("/add_product")
+    public ResponseEntity<String> addProduct(@RequestBody ProductInShop productInShop) {
+        AddProductRequest addProductRequest = new AddProductRequest(productInShop.getShopProduct(), productInShop.getShopId());
+        AddProductResponse response = (AddProductResponse) mediator.send(addProductRequest);
+
+        return ResponseEntity.ok(response.getMessage());
     }
 }
 

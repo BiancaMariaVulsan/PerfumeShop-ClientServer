@@ -112,7 +112,7 @@ public class EmployeeController extends Observable implements Initializable, Obs
                     .collect(Collectors.toList()));
         });
         addButton.setOnAction(e -> {
-            AddProductController addProductController = new AddProductController();
+            AddProductController addProductController = new AddProductController(idShop, productItems);
             this.addObserver(addProductController);
             Callback<Class<?>, Object> controllerFactory = type -> {
                 if (type == AddProductController.class) {

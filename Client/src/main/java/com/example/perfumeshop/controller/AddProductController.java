@@ -1,12 +1,19 @@
 package com.example.perfumeshop.controller;
 
 import com.example.perfumeshop.model.Language;
+import com.example.perfumeshop.model.Product;
+import com.example.perfumeshop.model.ShopProduct;
+import com.example.perfumeshop.requests.ProductRequest;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Observable;
 import java.util.Observer;
@@ -32,10 +39,28 @@ public class AddProductController implements Initializable, Observer {
     private TextField priceText;
     @FXML
     private Button saveButton;
+    private final int shopId;
+    private final ProductRequest productRequest = new ProductRequest();
+    private final ObservableList<ShopProduct> productItems;
+
+    public AddProductController(int shopId, ObservableList<ShopProduct>productItems) {
+        this.shopId = shopId;
+        this.productItems = productItems;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        saveButton.setOnAction(actionEvent -> {
+            try {
+                Product product = new Product(nameText.getText(), brandText.getText(), Float.parseFloat(priceText.getText()));
+                ShopProduct shopProduct = new ShopProduct(product, Integer.parseInt(stockText.getText()));
+                String message = productRequest.addProduct(shopProduct, shopId);
+                Controller.initAlarmBox("Success", message, Alert.AlertType.INFORMATION);
+                productItems.add(shopProduct);
+            } catch (URISyntaxException | IOException | InterruptedException e) {
+                Controller.initAlarmBox("Error", "Something went wrong when trying to add the product. Please make sure you insert valid properties!", Alert.AlertType.ERROR);
+            }
+        });
     }
 
     public void setNameLabel(String nameLabel) {

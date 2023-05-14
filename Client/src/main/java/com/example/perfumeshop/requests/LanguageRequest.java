@@ -23,7 +23,6 @@ public class LanguageRequest {
         HttpResponse<InputStream> response = client.send(request, HttpResponse.BodyHandlers.ofInputStream());
 
         ObjectMapper objectMapper = new ObjectMapper();
-        Language lng = objectMapper.readValue(response.body(), new TypeReference<>(){});
-        return lng;
+        return objectMapper.readValue(response.body(), new TypeReference<>(){});
     }
 }
