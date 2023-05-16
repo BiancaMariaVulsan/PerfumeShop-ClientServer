@@ -65,6 +65,21 @@ public class ProductController {
         return ResponseEntity.ok(response.getMessage());
     }
 
+    @PostMapping("/update_product")
+    public ResponseEntity<String> updateProduct(@RequestBody UpdateProductRequest updateProductRequest) {
+        UpdateProductResponse response = (UpdateProductResponse) mediator.send(updateProductRequest);
+
+        return ResponseEntity.ok(response.getMessage());
+    }
+
+    @DeleteMapping("/delete_product")
+    public ResponseEntity<String> deleteProduct(@RequestParam int productId, @RequestParam int shopId) {
+        DeleteProductRequest deleteProductRequest = new DeleteProductRequest(productId, shopId);
+        DeleteProductResponse response = (DeleteProductResponse) mediator.send(deleteProductRequest);
+
+        return ResponseEntity.ok(response.getMessage());
+    }
+
     @PostMapping("/save_products")
     public ResponseEntity<String> saveProducts(@RequestBody SaveProductsRequest saveProductsRequest) {
         SaveProductsResponse response = (SaveProductsResponse) mediator.send(saveProductsRequest);

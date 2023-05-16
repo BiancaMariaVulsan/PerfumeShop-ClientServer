@@ -140,6 +140,35 @@ public class EmployeeController extends Observable implements Initializable, Obs
             };
             Controller.loadFXML("/com/example/perfumeshop/add-product-view.fxml", controllerFactory);
         });
+        editButton.setOnAction(e -> {
+            AddProductController addProductController = new AddProductController(idShop, productItems, productTableView.getSelectionModel().getSelectedItem());
+            this.addObserver(addProductController);
+            Callback<Class<?>, Object> controllerFactory = type -> {
+                if (type == AddProductController.class) {
+                    return addProductController;
+                } else {
+                    try {
+                        return type.newInstance();
+                    } catch (Exception exc) {
+                        System.err.println("Could not load register controller " + type.getName());
+                        throw new RuntimeException(exc);
+                    }
+                }
+            };
+            Controller.loadFXML("/com/example/perfumeshop/add-product-view.fxml", controllerFactory);
+        });
+        deleteButton.setOnAction(e -> {
+            ShopProduct shopProduct = productTableView.getSelectionModel().getSelectedItem();
+            if(shopProduct != null) {
+                try {
+                    String message = productRequest.deleteProduct(shopProduct.getProduct().getId(), idShop);
+                    productItems.remove(shopProduct);
+                    Controller.initAlarmBox("INFO", message, Alert.AlertType.INFORMATION);
+                } catch (URISyntaxException | IOException | InterruptedException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
     }
 
     private void populateTableProducts() throws URISyntaxException, IOException, InterruptedException {

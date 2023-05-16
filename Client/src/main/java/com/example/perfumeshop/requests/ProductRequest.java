@@ -106,6 +106,30 @@ public class ProductRequest {
         return response.body();
     }
 
+    public String deleteProduct(int id, int shopId) throws URISyntaxException, IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(new URI(BASE_URL + "/delete_product?productId=" + id + "&shopId=" + shopId))
+                .DELETE()
+                .build();
+
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
+
+    public String updateProduct(int newStock, int productId, int shopId) throws URISyntaxException, IOException, InterruptedException {
+        String jsonBody = "{\"newStock\":" + newStock + "," +
+                "\"productId\":" + productId + "," +
+                "\"shopId\":" + shopId + "}";
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(new URI(BASE_URL + "/update_product"))
+                .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
+                .header("Content-Type", "application/json")
+                .build();
+
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
+
     public String saveProducts(List<Product> products, String fileName, String format) throws URISyntaxException, IOException, InterruptedException {
         ObjectMapper objectMapper = new ObjectMapper();
         String jsonBody = objectMapper.writeValueAsString(new SaveProductsRequest(fileName, products, format)); //todo: validate format
