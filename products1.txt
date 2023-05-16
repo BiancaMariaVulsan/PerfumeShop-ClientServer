@@ -1,0 +1,40 @@
+id: IntegerProperty [value: 1]
+name: StringProperty [value: Born in Roma]
+brand: StringProperty [value: Valentino]
+price: DoubleProperty [value: 450.0]
+
+id: IntegerProperty [value: 2]
+name: StringProperty [value: Light Blue]
+brand: StringProperty [value: Dolce Gabana]
+price: DoubleProperty [value: 420.0]
+
+id: IntegerProperty [value: 4]
+name: StringProperty [value: La Femme]
+brand: StringProperty [value: Prada]
+price: DoubleProperty [value: 500.0]
+
+id: IntegerProperty [value: 6]
+name: StringProperty [value: Candy]
+brand: StringProperty [value: Prada]
+price: DoubleProperty [value: 449.0]
+
+id: IntegerProperty [value: 3]
+name: StringProperty [value: Cristal Noir]
+brand: StringProperty [value: Versace]
+price: DoubleProperty [value: 420.2]
+
+id: IntegerProperty [value: 5]
+name: StringProperty [value: Paradoxe]
+brand: StringProperty [value: Prada]
+price: DoubleProperty [value: 443.9]
+
+id: IntegerProperty [value: 37]
+name: StringProperty [value: Jadore]
+brand: StringProperty [value: Dior]
+price: DoubleProperty [value: 370.0]
+
+id: IntegerProperty [value: 43]
+name: StringProperty [value: zd]
+brand: StringProperty [value: asd]
+price: DoubleProperty [value: 123.0]
+

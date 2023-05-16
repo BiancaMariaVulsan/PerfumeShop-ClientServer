@@ -10,12 +10,13 @@ import java.util.List;
 public class ProductsToSave extends AbstractData {
     private final List<Product> products;
 
-    public ProductsToSave(List<Product> products) {
+    public ProductsToSave(IFormat format, List<Product> products) {
+        super(format);
         this.products = products;
     }
 
     @Override
-    public void saveData(IFormat format, String fileName) {
-        format.saveToFile(Collections.singletonList(products), fileName);
+    public void saveData(String fileName) {
+        format.saveToFile(products, fileName);
     }
 }

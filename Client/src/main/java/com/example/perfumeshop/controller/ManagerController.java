@@ -104,7 +104,13 @@ public class ManagerController extends Observable implements Initializable, Obse
             }
         });
         saveCSV.setOnAction(e -> {
-
+            ProductRequest productRequest = new ProductRequest();
+            try {
+                String message = productRequest.saveProducts(productItems, "products1.csv", "csv");
+                System.out.println(message);
+            } catch (IOException | InterruptedException | URISyntaxException ex) {
+                throw new RuntimeException(ex);
+            }
         });
         saveJSON.setOnAction(e -> {
             ProductRequest productRequest = new ProductRequest();
@@ -116,12 +122,23 @@ public class ManagerController extends Observable implements Initializable, Obse
             }
         });
         saveXML.setOnAction(e -> {
-
+            ProductRequest productRequest = new ProductRequest();
+            try {
+                String message = productRequest.saveProducts(productItems, "products1.xml", "xml");
+                System.out.println(message);
+            } catch (IOException | InterruptedException | URISyntaxException ex) {
+                throw new RuntimeException(ex);
+            }
         });
         saveTXT.setOnAction(e -> {
-
+            ProductRequest productRequest = new ProductRequest();
+            try {
+                String message = productRequest.saveProducts(productItems, "products1.txt", "txt");
+                System.out.println(message);
+            } catch (IOException | InterruptedException | URISyntaxException ex) {
+                throw new RuntimeException(ex);
+            }
         });
-
     }
 
     private void populateTableProducts(List<Product> products) throws URISyntaxException, IOException, InterruptedException {

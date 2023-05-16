@@ -1,5 +1,11 @@
 package com.example.server.filesService.bridge;
 
 public abstract class AbstractData {
-    public abstract void saveData(IFormat format, String fileName);
+    protected final IFormat format;
+
+    public AbstractData(IFormat format) {
+        this.format = format;
+    }
+
+    public abstract void saveData(String fileName);
 }

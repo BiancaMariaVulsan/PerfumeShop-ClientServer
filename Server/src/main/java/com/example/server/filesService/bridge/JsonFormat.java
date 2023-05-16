@@ -9,7 +9,7 @@ import java.util.List;
 public class JsonFormat implements IFormat {
 
     @Override
-    public void saveToFile(List<Object> list, String fileName) {
+    public void saveToFile(List<?> list, String fileName) {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             objectMapper.writeValue(new File(fileName), list);

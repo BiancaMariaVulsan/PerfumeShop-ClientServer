@@ -14,8 +14,8 @@ public class SaveProductsHandler implements Handler {
         SaveProductsRequest saveProductsRequest = (SaveProductsRequest) message;
         IFormat format = saveProductsRequest.getFormat();
 //        format.saveToFile(Collections.singletonList(saveProductsRequest.getData()), saveProductsRequest.getFileName());
-        ProductsToSave abstractData = new ProductsToSave(saveProductsRequest.getData());
-        abstractData.saveData(format, saveProductsRequest.getFileName());
+        ProductsToSave abstractData = new ProductsToSave(format, saveProductsRequest.getData());
+        abstractData.saveData(saveProductsRequest.getFileName());
 
         return new SaveProductsResponse("Products saved successfully!"); // todo: update message
     }

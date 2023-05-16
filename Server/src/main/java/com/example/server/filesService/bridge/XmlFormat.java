@@ -9,9 +9,9 @@ import java.util.List;
 
 public class XmlFormat implements IFormat{
     @Override
-    public void saveToFile(List<Object> list, String fileName) {
+    public void saveToFile(List<?> list, String fileName) {
         try {
-            JAXBContext context = JAXBContext.newInstance(Object.class);
+            JAXBContext context = JAXBContext.newInstance(list.get(0).getClass());
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 

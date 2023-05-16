@@ -7,14 +7,24 @@ import java.util.List;
 
 public class CsvFormat implements IFormat {
     @Override
-    public void saveToFile(List<Object> list, String fileName) {
+    public void saveToFile(List<?> list, String fileName) {
         try{
             FileWriter csvWriter = new FileWriter(fileName);
             for (Object obj : list) {
                 Field[] fields = obj.getClass().getDeclaredFields();
 
+                // Write the headers to the CSV file
                 for (Field field : fields) {
-                    csvWriter.append(field.toString());
+                    csvWriter.append(field.getName());
+                    csvWriter.append(",");
+                }
+                csvWriter.append("\n");
+
+                // Write the values to the CSV file
+                for (Field field : fields) {
+                    field.setAccessible(true);
+                    Object value = field.get(obj);
+                    csvWriter.append(String.valueOf(value));
                     csvWriter.append(",");
                 }
                 csvWriter.append("\n");
@@ -24,6 +34,8 @@ public class CsvFormat implements IFormat {
             System.out.println("Products saved to CSV file successfully.");
         } catch (IOException e) {
             System.out.println("An error occurred while saving products to CSV file: " + e.getMessage());
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
         }
     }
 }

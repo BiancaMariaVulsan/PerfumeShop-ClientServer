@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<objects>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product>
+    <brand>Valentino</brand>
+    <id>1</id>
+    <name>Born in Roma</name>
+    <price>450.0</price>
+</product>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product>
+    <brand>Dolce Gabana</brand>
+    <id>2</id>
+    <name>Light Blue</name>
+    <price>420.0</price>
+</product>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product>
+    <brand>Prada</brand>
+    <id>4</id>
+    <name>La Femme</name>
+    <price>500.0</price>
+</product>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product>
+    <brand>Prada</brand>
+    <id>6</id>
+    <name>Candy</name>
+    <price>449.0</price>
+</product>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product>
+    <brand>Versace</brand>
+    <id>3</id>
+    <name>Cristal Noir</name>
+    <price>420.2</price>
+</product>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product>
+    <brand>Prada</brand>
+    <id>5</id>
+    <name>Paradoxe</name>
+    <price>443.9</price>
+</product>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product>
+    <brand>Dior</brand>
+    <id>37</id>
+    <name>Jadore</name>
+    <price>370.0</price>
+</product>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product>
+    <brand>asd</brand>
+    <id>43</id>
+    <name>zd</name>
+    <price>123.0</price>
+</product>
+</objects>

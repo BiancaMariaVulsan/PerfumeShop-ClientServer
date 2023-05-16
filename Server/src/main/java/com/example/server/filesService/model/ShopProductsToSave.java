@@ -11,12 +11,13 @@ public class ShopProductsToSave extends AbstractData {
 
    private final List<ShopProduct> products;
 
-    public ShopProductsToSave(List<ShopProduct> products) {
+    public ShopProductsToSave(IFormat format, List<ShopProduct> products) {
+        super(format);
         this.products = products;
     }
 
     @Override
-    public void saveData(IFormat format, String fileName) {
+    public void saveData(String fileName) {
         format.saveToFile(Collections.singletonList(products), fileName);
     }
 }

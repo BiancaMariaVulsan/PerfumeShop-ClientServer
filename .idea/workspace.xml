@@ -5,13 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d36c23ad-556d-4ac9-80e5-6191bf4bd9d4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/products1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/ManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/ManagerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/ManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/ManagerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/SaveProductsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/SaveProductsHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/bridge/AbstractData.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/bridge/AbstractData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/bridge/CsvFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/bridge/CsvFormat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/bridge/IFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/bridge/IFormat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/bridge/JsonFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/bridge/JsonFormat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/bridge/TxtFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/bridge/TxtFormat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/bridge/XmlFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/bridge/XmlFormat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/model/ProductsToSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/model/ProductsToSave.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/model/ShopProductsToSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/model/ShopProductsToSave.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/requests/products/SaveProductsRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/requests/products/SaveProductsRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +72,9 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/FACULTATE/ANIII/SEM2/CN/lab/Relay&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;9aa1b03934893d7134a660af4204f2a9&quot;
   }
 }</component>
@@ -132,8 +144,10 @@
       </method>
     </configuration>
     <configuration name="ServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="ACTIVE_PROFILES" />
       <module name="Server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.server.ServerApplication" />
+      <option name="VM_PARAMETERS" value="--add-opens java.base/java.lang=ALL-UNNAMED " />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.server.*" />
@@ -177,7 +191,7 @@
       <workItem from="1683969243733" duration="27272000" />
       <workItem from="1684058083415" duration="15772000" />
       <workItem from="1684155417563" duration="1240000" />
-      <workItem from="1684218386348" duration="2751000" />
+      <workItem from="1684218386348" duration="9987000" />
     </task>
     <servers />
   </component>
@@ -212,14 +226,19 @@
           <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/ManagerController.java</url>
-          <line>111</line>
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/SaveProductsHandler.java</url>
           <line>13</line>
-          <option name="timeStamp" value="59" />
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/bridge/TxtFormat.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/bridge/XmlFormat.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="66" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
