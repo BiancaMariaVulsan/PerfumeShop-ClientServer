@@ -7,12 +7,18 @@ public class FilterProductsRequest implements Request {
     private String brand;
     private float price;
     private boolean availability;
+    private int shopId;
 
-    public FilterProductsRequest(String name, String brand, float price, boolean availability) {
+    public FilterProductsRequest(String name, String brand, float price, boolean availability, int shopId) {
         this.name = name;
         this.brand = brand;
         this.price = price;
         this.availability = availability;
+        this.shopId = shopId;
+    }
+
+    public int getShopId() {
+        return shopId;
     }
 
     public String getName() {

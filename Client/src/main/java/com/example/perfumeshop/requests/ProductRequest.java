@@ -56,13 +56,32 @@ public class ProductRequest {
         return objectMapper.readValue(response.body(), new TypeReference<>(){});
     }
 
-    public List<Product> filterProducts(String name, String brand, boolean availability, float price) throws URISyntaxException, IOException, InterruptedException {
+    public List<Product> filterProducts(String name, String brand, boolean availability, float price, int shopId) throws URISyntaxException, IOException, InterruptedException {
         String jsonBody = "{\"name\":\"" + name + "\"," +
                 "\"brand\":\"" + brand + "\"," +
                 "\"availability\":" + availability + "," +
+                "\"shopId\":" + shopId + "," +
                 "\"price\":" + price + "}";
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(new URI(BASE_URL + "/filter_products"))
+                .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
+                .header("Content-Type", "application/json")
+                .build();
+
+        HttpResponse<InputStream> response = client.send(request, HttpResponse.BodyHandlers.ofInputStream());
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        return objectMapper.readValue(response.body(), new TypeReference<>(){});
+    }
+
+    public List<ShopProduct> filterShopProducts(String name, String brand, boolean availability, float price, int idShop) throws URISyntaxException, IOException, InterruptedException {
+        String jsonBody = "{\"name\":\"" + name + "\"," +
+                "\"brand\":\"" + brand + "\"," +
+                "\"availability\":" + availability + "," +
+                "\"shopId\":" + idShop + "," +
+                "\"price\":" + price + "}";
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(new URI(BASE_URL + "/filter_shop_products"))
                 .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
                 .header("Content-Type", "application/json")
                 .build();

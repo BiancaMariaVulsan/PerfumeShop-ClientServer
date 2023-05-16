@@ -3,8 +3,8 @@ package com.example.server.api;
 import com.example.server.mediator.IMediator;
 import com.example.server.mediator.Mediator;
 import com.example.server.mediator.requests.products.*;
+import com.example.server.mediator.responses.persons.FilterShopProductsResponse;
 import com.example.server.mediator.responses.products.*;
-import com.example.server.model.Filters;
 import com.example.server.model.Product;
 import com.example.server.model.ProductInShop;
 import com.example.server.model.ShopProduct;
@@ -44,11 +44,17 @@ public class ProductController {
     }
 
     @PostMapping("/filter_products")
-    public ResponseEntity<List<Product>> login(@RequestBody Filters filters) {
-        FilterProductsRequest filterProductsRequest = new FilterProductsRequest(filters.getName(), filters.getBrand(), filters.getPrice(), filters.isAvailability());
+    public ResponseEntity<List<Product>> login(@RequestBody FilterProductsRequest filterProductsRequest) {
         FilterProductsResponse response = (FilterProductsResponse) mediator.send(filterProductsRequest);
 
         return ResponseEntity.ok(response.getFilteredProducts());
+    }
+
+    @PostMapping("/filter_shop_products")
+    public ResponseEntity<List<ShopProduct>> login(@RequestBody FilterShopProductRequest filterProductsRequest) {
+        FilterShopProductsResponse response = (FilterShopProductsResponse) mediator.send(filterProductsRequest);
+
+        return ResponseEntity.ok(response.getShopProductList());
     }
 
     @PostMapping("/add_product")

@@ -1,6 +1,7 @@
 package com.example.perfumeshop.controller;
 
 import com.example.perfumeshop.model.Language;
+import com.example.perfumeshop.model.Product;
 import com.example.perfumeshop.model.ShopProduct;
 import com.example.perfumeshop.requests.LanguageRequest;
 import com.example.perfumeshop.requests.ProductRequest;
@@ -110,6 +111,17 @@ public class EmployeeController extends Observable implements Initializable, Obs
             productItems.setAll(productItems.stream()
                     .sorted(Comparator.comparing(sp -> sp.getProduct().getPrice()))
                     .collect(Collectors.toList()));
+        });
+        filterButton.setOnAction(e -> {
+            try {
+                float price = 0;
+                if(!priceFilter.getText().isEmpty()) {
+                    price = Float.parseFloat(priceFilter.getText());
+                }
+                productItems.setAll(productRequest.filterShopProducts(nameFilter.getText(), brandFilter.getText(), availabilityFilter.isSelected(), price, idShop));
+            } catch (URISyntaxException | IOException | InterruptedException ex) {
+                throw new RuntimeException(ex);
+            }
         });
         addButton.setOnAction(e -> {
             AddProductController addProductController = new AddProductController(idShop, productItems);

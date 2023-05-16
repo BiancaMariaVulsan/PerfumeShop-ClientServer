@@ -16,37 +16,38 @@ import java.util.*;
 public class FilterProductsHandler implements Handler {
     private final ProductPersistence productPersistence;
 
-public FilterProductsHandler() {
+    public FilterProductsHandler() {
         productPersistence = new ProductPersistence();
     }
 
     @Override
     public Response onMessage(Request message) {
         FilterProductsRequest filterProductsRequest = (FilterProductsRequest) message;
-        float price = filterProductsRequest.getPrice();
-        String brand = filterProductsRequest.getBrand();
-        String name = filterProductsRequest.getName();
-        boolean availability = filterProductsRequest.isAvailability();
 
         Map<Integer, List<ShopProduct>> shopProducts = productPersistence.getShopProducts();
         Set<Product> availableProducts = new HashSet<>();
-        for(Map.Entry<Integer, List<ShopProduct>> entry : shopProducts.entrySet()) {
-            for(ShopProduct shopProduct : entry.getValue()) {
-                if(shopProduct.getStock() > 0) {
+        for (Map.Entry<Integer, List<ShopProduct>> entry : shopProducts.entrySet()) {
+            for (ShopProduct shopProduct : entry.getValue()) {
+                if (shopProduct.getStock() > 0) {
                     availableProducts.add(shopProduct.getProduct());
                 }
             }
         }
         List<Product> products = new ArrayList<>(availableProducts);
 
-        LowPriceSpecification lowPrice= new LowPriceSpecification(price);
-        BrandSpecification brandSpec = new BrandSpecification(brand);
-        NameSpecification nameSpecification = new NameSpecification(name);
-        ChainAvailabilitySpecification availabilitySpecification = new ChainAvailabilitySpecification(availability, products);
+        LowPriceSpecification lowPrice = new LowPriceSpecification(filterProductsRequest.getPrice());
+        BrandSpecification brandSpec = new BrandSpecification(filterProductsRequest.getBrand());
+        NameSpecification nameSpecification = new NameSpecification(filterProductsRequest.getName());
+        ChainAvailabilitySpecification availabilitySpecification = new ChainAvailabilitySpecification(filterProductsRequest.isAvailability(), products);
 
         Specification<Product> filterSpec = new AndSpecification<>(lowPrice, brandSpec, nameSpecification, availabilitySpecification);
 
-        List<Product> allProducts = productPersistence.findAll();
+        List<Product> allProducts;
+        if (filterProductsRequest.getShopId() == 0) {
+            allProducts = productPersistence.findAll();
+        } else {
+            allProducts = shopProducts.get(filterProductsRequest.getShopId()).stream().map(ShopProduct::getProduct).toList();
+        }
         List<Product> filteredProducts = new ArrayList<>();
         for (Product product : allProducts) {
             if (filterSpec.isSatisfiedBy(product)) {

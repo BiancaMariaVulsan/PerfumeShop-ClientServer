@@ -29,6 +29,7 @@ public class ServerApplication {
         mediator.registerHandler(LoginPersonRequest.class, LoginPersonHandler.class);
 
         mediator.registerHandler(FilterProductsRequest.class, FilterProductsHandler.class);
+        mediator.registerHandler(FilterShopProductRequest.class, FilterShopProductHandler.class);
         mediator.registerHandler(GetAllProductsRequest.class, GetAllProductsHandler.class);
         mediator.registerHandler(GetShopProductsRequest.class,GetShopProductsHandler.class);
         mediator.registerHandler(GetProductsAvailableInTheChainRequest.class, GetProductsAvailableInTheChainHandler.class);

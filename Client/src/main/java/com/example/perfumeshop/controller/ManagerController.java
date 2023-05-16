@@ -102,7 +102,8 @@ public class ManagerController extends Observable implements Initializable, Obse
                 if(!priceFilter.getText().isEmpty()) {
                     price = Float.parseFloat(priceFilter.getText());
                 }
-                populateTableProducts(productRequest.filterProducts(nameFilter.getText(), brandFilter.getText(), availabilityFilter.isSelected(), price));
+                String shop = shopChoice.getValue();
+                populateTableProducts(productRequest.filterProducts(nameFilter.getText(), brandFilter.getText(), availabilityFilter.isSelected(), price, getShopId(shop)));
             } catch (URISyntaxException | IOException | InterruptedException ex) {
                 throw new RuntimeException(ex);
             }
@@ -261,6 +262,17 @@ public class ManagerController extends Observable implements Initializable, Obse
             shopChoice.getItems().add(shop.getName());
         }
         shopChoice.setValue(shops.get(0).getName()); // suppose there is at least one shop
+    }
+
+    int getShopId(String name) throws URISyntaxException, IOException, InterruptedException {
+        ShopRequest shopRequest = new ShopRequest();
+        List<Shop> shops = shopRequest.getShops();
+        for(Shop shop: shops) {
+            if(shop.getName().equals(name)) {
+                return shop.getId();
+            }
+        }
+        return -1;
     }
 
     @Override
