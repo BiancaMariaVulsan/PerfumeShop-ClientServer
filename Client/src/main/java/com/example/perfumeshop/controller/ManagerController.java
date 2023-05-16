@@ -109,7 +109,8 @@ public class ManagerController extends Observable implements Initializable, Obse
         saveJSON.setOnAction(e -> {
             ProductRequest productRequest = new ProductRequest();
             try {
-                productRequest.saveProducts(productItems, "products.json", "json");
+                String message = productRequest.saveProducts(productItems, "products1.json", "json");
+                System.out.println(message);
             } catch (IOException | InterruptedException | URISyntaxException ex) {
                 throw new RuntimeException(ex);
             }

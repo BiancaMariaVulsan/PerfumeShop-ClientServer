@@ -25,6 +25,7 @@ public class SaveProductsRequest implements Request {
         return data;
     }
 
+    // factory method
     public IFormat getFormat() {
         if(format.equals("json")) {
             return new JsonFormat();

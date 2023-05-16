@@ -15,7 +15,7 @@ public class ProductsToSave extends AbstractData {
     }
 
     @Override
-    protected void saveData(IFormat format, String fileName) {
+    public void saveData(IFormat format, String fileName) {
         format.saveToFile(Collections.singletonList(products), fileName);
     }
 }
