@@ -86,5 +86,12 @@ public class ProductController {
 
         return ResponseEntity.ok(response.getMessage());
     }
+
+    @PostMapping("/save_shop_products")
+    public ResponseEntity<String> saveProducts(@RequestBody SaveShopProductsRequest saveProductsRequest) {
+        SaveShopProductsResponse response = (SaveShopProductsResponse) mediator.send(saveProductsRequest);
+
+        return ResponseEntity.ok(response.getMessage());
+    }
 }
 

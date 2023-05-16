@@ -2,6 +2,7 @@ package com.example.server;
 
 import com.example.server.filesService.GetLanguageHandler;
 import com.example.server.filesService.SaveProductsHandler;
+import com.example.server.filesService.SaveShopProductsHandler;
 import com.example.server.mediator.Mediator;
 import com.example.server.mediator.requests.language.GetLanguageRequest;
 import com.example.server.mediator.requests.persons.GetEmployeeShopRequest;
@@ -40,6 +41,7 @@ public class ServerApplication {
         mediator.registerHandler(GetLanguageRequest.class, GetLanguageHandler.class);
 
         mediator.registerHandler(SaveProductsRequest.class, SaveProductsHandler.class);
+        mediator.registerHandler(SaveShopProductsRequest.class, SaveShopProductsHandler.class);
 
         mediator.registerHandler(GetShopRequest.class, GetShopHandler.class);
 

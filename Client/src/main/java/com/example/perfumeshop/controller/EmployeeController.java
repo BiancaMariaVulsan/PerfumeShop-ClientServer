@@ -169,6 +169,42 @@ public class EmployeeController extends Observable implements Initializable, Obs
                 }
             }
         });
+        saveCSV.setOnAction(e -> {
+            ProductRequest productRequest = new ProductRequest();
+            try {
+                String message = productRequest.saveShopProducts(productItems, "products_shop.csv", "csv");
+                System.out.println(message);
+            } catch (IOException | InterruptedException | URISyntaxException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+        saveJSON.setOnAction(e -> {
+            ProductRequest productRequest = new ProductRequest();
+            try {
+                String message = productRequest.saveShopProducts(productItems, "products_shop.json", "json");
+                System.out.println(message);
+            } catch (IOException | InterruptedException | URISyntaxException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+        saveXML.setOnAction(e -> {
+            ProductRequest productRequest = new ProductRequest();
+            try {
+                String message = productRequest.saveShopProducts(productItems, "products_shop.xml", "xml");
+                System.out.println(message);
+            } catch (IOException | InterruptedException | URISyntaxException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+        saveTXT.setOnAction(e -> {
+            ProductRequest productRequest = new ProductRequest();
+            try {
+                String message = productRequest.saveShopProducts(productItems, "products_shop.txt", "txt");
+                System.out.println(message);
+            } catch (IOException | InterruptedException | URISyntaxException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
     }
 
     private void populateTableProducts() throws URISyntaxException, IOException, InterruptedException {

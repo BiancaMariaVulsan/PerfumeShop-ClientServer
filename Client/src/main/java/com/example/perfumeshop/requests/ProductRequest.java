@@ -1,9 +1,6 @@
 package com.example.perfumeshop.requests;
 
-import com.example.perfumeshop.model.AddProductRequest;
-import com.example.perfumeshop.model.Product;
-import com.example.perfumeshop.model.SaveProductsRequest;
-import com.example.perfumeshop.model.ShopProduct;
+import com.example.perfumeshop.model.*;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -144,5 +141,17 @@ public class ProductRequest {
         return response.body();
     }
 
-    //todo: saveShopProducts request
+    public String saveShopProducts(List<ShopProduct> products, String fileName, String format) throws URISyntaxException, IOException, InterruptedException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        String jsonBody = objectMapper.writeValueAsString(new SaveShopProductsRequest(fileName, products, format)); //todo: validate format
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(new URI(BASE_URL + "/save_shop_products"))
+                .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
+                .header("Content-Type", "application/json")
+                .build();
+
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
 }
