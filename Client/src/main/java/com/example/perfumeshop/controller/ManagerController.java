@@ -2,8 +2,10 @@ package com.example.perfumeshop.controller;
 
 import com.example.perfumeshop.model.Language;
 import com.example.perfumeshop.model.Product;
+import com.example.perfumeshop.model.Shop;
 import com.example.perfumeshop.requests.LanguageRequest;
 import com.example.perfumeshop.requests.ProductRequest;
+import com.example.perfumeshop.requests.ShopRequest;
 import javafx.beans.property.ReadOnlyBooleanWrapper;
 import javafx.beans.property.ReadOnlyDoubleWrapper;
 import javafx.beans.property.ReadOnlyStringWrapper;
@@ -12,6 +14,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.util.Callback;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -75,6 +78,7 @@ public class ManagerController extends Observable implements Initializable, Obse
         Controller.initLanguageCheckBox(languageChoice);
         try {
             populateTableProducts(productRequest.getAllProducts());
+            initShopCheckBox();
         } catch (URISyntaxException | IOException | InterruptedException | RuntimeException e) {
             throw new RuntimeException(e);
         }
@@ -102,6 +106,51 @@ public class ManagerController extends Observable implements Initializable, Obse
             } catch (URISyntaxException | IOException | InterruptedException ex) {
                 throw new RuntimeException(ex);
             }
+        });
+        sortNameButton.setOnAction(e -> {
+            productItems.setAll(productItems.stream().sorted(Comparator.comparing(Product::getName)).toList());
+        });
+        sortPriceButton.setOnAction(e -> {
+            productItems.setAll(productItems.stream().sorted(Comparator.comparing(Product::getPrice)).toList());
+        });
+        brandAnalysisButton.setOnAction(e -> {
+            ArrayList<String> brands = new ArrayList<>() {
+                {
+                    add("Valentino");
+                    add("Versace");
+                    add("Prada");
+                    add("Dolce Gabana");
+                    add("Dior");
+                }
+            };
+            Callback<Class<?>, Object> controllerFactory = type -> {
+                if (type == BrandChartController.class) {
+                    return new BrandChartController(productItems);
+                } else {
+                    try {
+                        return type.newInstance();
+                    } catch (Exception exc) {
+                        System.err.println("Could not load register controller " + type.getName());
+                        throw new RuntimeException(exc);
+                    }
+                }
+            };
+            Controller.loadFXML("/com/example/perfumeshop/brand-pie-chart.fxml", controllerFactory);
+        });
+        priceAnalysisButton.setOnAction(e -> {
+            Callback<Class<?>, Object> controllerFactory = type -> {
+                if (type == PriceChartController.class) {
+                    return new PriceChartController(productItems);
+                } else {
+                    try {
+                        return type.newInstance();
+                    } catch (Exception exc) {
+                        System.err.println("Could not load register controller " + type.getName());
+                        throw new RuntimeException(exc);
+                    }
+                }
+            };
+            Controller.loadFXML("/com/example/perfumeshop/price-pie-chart.fxml", controllerFactory);
         });
         saveCSV.setOnAction(e -> {
             ProductRequest productRequest = new ProductRequest();
@@ -203,6 +252,15 @@ public class ManagerController extends Observable implements Initializable, Obse
 
     public void setPriceAnalysisButton(String priceAnalysisButton) {
         this.priceAnalysisButton.setText(priceAnalysisButton);
+    }
+
+    public void initShopCheckBox() throws URISyntaxException, IOException, InterruptedException {
+        ShopRequest shopRequest = new ShopRequest();
+        List<Shop> shops = shopRequest.getShops();
+        for(Shop shop: shops) {
+            shopChoice.getItems().add(shop.getName());
+        }
+        shopChoice.setValue(shops.get(0).getName()); // suppose there is at least one shop
     }
 
     @Override

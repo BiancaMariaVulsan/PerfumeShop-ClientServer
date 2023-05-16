@@ -4,9 +4,12 @@ import com.example.server.mediator.IMediator;
 import com.example.server.mediator.Mediator;
 import com.example.server.mediator.requests.persons.GetEmployeeShopRequest;
 import com.example.server.mediator.requests.persons.GetPersonsRequest;
+import com.example.server.mediator.requests.persons.GetShopRequest;
 import com.example.server.mediator.responses.persons.GetEmployeeShopResponse;
 import com.example.server.mediator.responses.persons.GetPersonsResponse;
+import com.example.server.mediator.responses.persons.GetShopResponse;
 import com.example.server.model.Person;
+import com.example.server.model.Shop;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,5 +38,13 @@ public class PersonController {
         GetPersonsResponse response = (GetPersonsResponse) mediator.send(request);
 
         return ResponseEntity.ok(response.getPersons());
+    }
+
+    @GetMapping("/shops")
+    public ResponseEntity<List<Shop>> getShops() {
+        GetShopRequest request = new GetShopRequest();
+        GetShopResponse response = (GetShopResponse) mediator.send(request);
+
+        return ResponseEntity.ok(response.getShops());
     }
 }
