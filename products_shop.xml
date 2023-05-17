@@ -1,3 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <objects>
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<shop_product>
+    <product>
+        <brand>Dior</brand>
+        <id>37</id>
+        <name>Jadore</name>
+        <price>370.0</price>
+    </product>
+    <stock>3</stock>
+</shop_product>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<shop_product>
+    <product>
+        <brand>Prada</brand>
+        <id>6</id>
+        <name>Candy</name>
+        <price>449.0</price>
+    </product>
+    <stock>3</stock>
+</shop_product>
+</objects>

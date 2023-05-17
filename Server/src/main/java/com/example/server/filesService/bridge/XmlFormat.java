@@ -27,6 +27,7 @@ public class XmlFormat implements IFormat{
             System.out.println("Objects saved to XML file successfully.");
         } catch (IOException | JAXBException e) {
             System.out.println("An error occurred while saving objects to XML file: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 }

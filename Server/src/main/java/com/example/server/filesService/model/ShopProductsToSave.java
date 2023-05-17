@@ -18,6 +18,6 @@ public class ShopProductsToSave extends AbstractData {
 
     @Override
     public void saveData(String fileName) {
-        format.saveToFile(Collections.singletonList(products), fileName);
+        format.saveToFile(products, fileName);
     }
 }

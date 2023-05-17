@@ -13,7 +13,6 @@ public class SaveProductsHandler implements Handler {
     public Response onMessage(Request message) {
         SaveProductsRequest saveProductsRequest = (SaveProductsRequest) message;
         IFormat format = saveProductsRequest.getFormat();
-//        format.saveToFile(Collections.singletonList(saveProductsRequest.getData()), saveProductsRequest.getFileName());
         ProductsToSave abstractData = new ProductsToSave(format, saveProductsRequest.getData());
         abstractData.saveData(saveProductsRequest.getFileName());
 

@@ -1,0 +1,4 @@
+product,stock,
+Product{id=IntegerProperty [value: 37], name=StringProperty [value: Jadore], price=DoubleProperty [value: 370.0]},3,
+product,stock,
+Product{id=IntegerProperty [value: 6], name=StringProperty [value: Candy], price=DoubleProperty [value: 449.0]},3,

@@ -2,6 +2,7 @@ package com.example.server.model;
 
 import javafx.beans.property.*;
 
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "product")
@@ -25,7 +26,7 @@ public class Product {
     }
 
     public Product() {}
-
+    @XmlElement(name = "id")
     public int getId() {
         return id.get();
     }
@@ -37,7 +38,7 @@ public class Product {
     public void setId(int id) {
         this.id.set(id);
     }
-
+    @XmlElement(name = "name")
     public String getName() {
         return name.get();
     }
@@ -49,7 +50,7 @@ public class Product {
     public void setName(String name) {
         this.name.set(name);
     }
-
+    @XmlElement(name = "price")
     public double getPrice() {
         return price.get();
     }
@@ -61,7 +62,7 @@ public class Product {
     public void setPrice(double price) {
         this.price.set(price);
     }
-
+    @XmlElement(name = "brand")
     public String getBrand() {
         return brand.get();
     }

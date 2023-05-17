@@ -5,15 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d36c23ad-556d-4ac9-80e5-6191bf4bd9d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/model/SaveShopProductsRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/SaveShopProductsHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/requests/products/SaveShopProductsRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/responses/products/SaveShopProductsResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/requests/ProductRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/requests/ProductRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/ServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/ServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/api/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/api/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/bridge/IFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/bridge/IFormat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/SaveProductsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/SaveProductsHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/bridge/XmlFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/bridge/XmlFormat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/model/ShopProductsToSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/model/ShopProductsToSave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/ShopProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/ShopProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products_shop.csv" beforeDir="false" afterPath="$PROJECT_DIR$/products_shop.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products_shop.json" beforeDir="false" afterPath="$PROJECT_DIR$/products_shop.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products_shop.txt" beforeDir="false" afterPath="$PROJECT_DIR$/products_shop.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +185,8 @@
       <workItem from="1684058083415" duration="15772000" />
       <workItem from="1684155417563" duration="1240000" />
       <workItem from="1684218386348" duration="9987000" />
-      <workItem from="1684259636626" duration="14761000" />
+      <workItem from="1684259636626" duration="14995000" />
+      <workItem from="1684302344181" duration="4336000" />
     </task>
     <servers />
   </component>
@@ -230,11 +231,6 @@
           <option name="timeStamp" value="66" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/requests/ShopRequest.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/GetShopHandler.java</url>
           <line>21</line>
           <option name="timeStamp" value="68" />
@@ -248,6 +244,11 @@
           <url>file://$PROJECT_DIR$/Server/src/main/java/com/example/server/api/ProductController.java</url>
           <line>69</line>
           <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Server/src/main/java/com/example/server/api/ProductController.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="82" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
