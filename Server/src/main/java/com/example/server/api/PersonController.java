@@ -2,9 +2,11 @@ package com.example.server.api;
 
 import com.example.server.mediator.IMediator;
 import com.example.server.mediator.Mediator;
+import com.example.server.mediator.requests.persons.FilterPersonsRequest;
 import com.example.server.mediator.requests.persons.GetEmployeeShopRequest;
 import com.example.server.mediator.requests.persons.GetPersonsRequest;
 import com.example.server.mediator.requests.persons.GetShopRequest;
+import com.example.server.mediator.responses.persons.FilterPersonsResponse;
 import com.example.server.mediator.responses.persons.GetEmployeeShopResponse;
 import com.example.server.mediator.responses.persons.GetPersonsResponse;
 import com.example.server.mediator.responses.persons.GetShopResponse;
@@ -46,5 +48,13 @@ public class PersonController {
         GetShopResponse response = (GetShopResponse) mediator.send(request);
 
         return ResponseEntity.ok(response.getShops());
+    }
+
+    @GetMapping("/filter_users")
+    public ResponseEntity<List<Person>> filterPersons(@RequestParam String role) {
+        FilterPersonsRequest filterPersonsRequest = new FilterPersonsRequest(role);
+        FilterPersonsResponse filterPersonsResponse = (FilterPersonsResponse) mediator.send(filterPersonsRequest);
+
+        return ResponseEntity.ok(filterPersonsResponse.getFilteredPersons());
     }
 }

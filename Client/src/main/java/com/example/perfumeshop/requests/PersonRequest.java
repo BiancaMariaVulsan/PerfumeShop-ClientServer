@@ -41,4 +41,16 @@ public class PersonRequest {
         return objectMapper.readValue(response.body(), new TypeReference<>(){});
     }
 
+    public List<Person> filterPersons(String role) throws IOException, InterruptedException, URISyntaxException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(new URI(BASE_URL + "/filter_users?role=" + role))
+                .GET()
+                .build();
+
+        HttpResponse<InputStream> response = client.send(request, HttpResponse.BodyHandlers.ofInputStream());
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        return objectMapper.readValue(response.body(), new TypeReference<>(){});
+    }
+
 }

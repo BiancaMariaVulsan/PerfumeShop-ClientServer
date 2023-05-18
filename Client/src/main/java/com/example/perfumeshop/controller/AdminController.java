@@ -89,6 +89,21 @@ public class AdminController extends Observable implements Initializable, Observ
             };
             Controller.loadFXML("/com/example/perfumeshop/register-view.fxml", controllerFactory);
         });
+        filterButton.setOnAction(e -> {
+            try {
+                String roleMap;
+                if(roleChoice.getValue().equals("ANGAJAT") || roleChoice.getValue().equals("MITERBEITER") || roleChoice.getValue().equals("EMPLOYEE")) {
+                    roleMap = "EMPLOYEE";
+                } else if(roleChoice.getValue().equals("ADMINISTRATOR") || roleChoice.getValue().equals("ADMIN")) {
+                    roleMap = "ADMIN";
+                } else {
+                    roleMap = "MANAGER";
+                }
+                personItems.setAll(personRequest.filterPersons(roleMap));
+            } catch (IOException | InterruptedException | URISyntaxException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
     }
 
     private void populateTablePersons() throws IOException, URISyntaxException, InterruptedException {

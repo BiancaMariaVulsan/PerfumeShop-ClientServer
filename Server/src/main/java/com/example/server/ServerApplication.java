@@ -5,15 +5,9 @@ import com.example.server.filesService.SaveProductsHandler;
 import com.example.server.filesService.SaveShopProductsHandler;
 import com.example.server.mediator.Mediator;
 import com.example.server.mediator.requests.language.GetLanguageRequest;
-import com.example.server.mediator.requests.persons.GetEmployeeShopRequest;
-import com.example.server.mediator.requests.persons.GetPersonsRequest;
-import com.example.server.mediator.requests.persons.GetShopRequest;
-import com.example.server.mediator.requests.persons.LoginPersonRequest;
+import com.example.server.mediator.requests.persons.*;
 import com.example.server.mediator.requests.products.*;
-import com.example.server.personService.GetEmployeeShopHandler;
-import com.example.server.personService.GetPersonsHandler;
-import com.example.server.personService.GetShopHandler;
-import com.example.server.personService.LoginPersonHandler;
+import com.example.server.personService.*;
 import com.example.server.productService.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -28,6 +22,7 @@ public class ServerApplication {
         mediator.registerHandler(GetEmployeeShopRequest.class, GetEmployeeShopHandler.class);
         mediator.registerHandler(GetPersonsRequest.class, GetPersonsHandler.class);
         mediator.registerHandler(LoginPersonRequest.class, LoginPersonHandler.class);
+        mediator.registerHandler(FilterPersonsRequest.class, FilterPersonsHandler.class);
 
         mediator.registerHandler(FilterProductsRequest.class, FilterProductsHandler.class);
         mediator.registerHandler(FilterShopProductRequest.class, FilterShopProductHandler.class);
