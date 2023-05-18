@@ -13,17 +13,15 @@ public class Person {
     private final StringProperty lastName = new SimpleStringProperty();
     private final StringProperty username = new SimpleStringProperty();
     private final StringProperty password = new SimpleStringProperty();
-    private final IntegerProperty shopId = new SimpleIntegerProperty();
     private Role role;
 
-    public Person(int id, String firstName, String lastName, Role role, String username, String password, int shopId) {
+    public Person(int id, String firstName, String lastName, Role role, String username, String password) {
         this.id.set(id);
         this.firstName.set(firstName);
         this.lastName.set(lastName);
         this.role = role;
         this.username.set(username);
         this.password.set(password);
-        this.shopId.set(shopId);
     }
 
     public Person(String firstName, String lastName, Role role, String username, String password) {
@@ -104,17 +102,7 @@ public class Person {
     public void setPassword(String password) {
         this.password.set(password);
     }
-    public int getShopId() {
-        return shopId.get();
-    }
 
-    public IntegerProperty shopIdProperty() {
-        return shopId;
-    }
-
-    public void setShopId(int shopId) {
-        this.shopId.set(shopId);
-    }
 
     @Override
     public String toString() {

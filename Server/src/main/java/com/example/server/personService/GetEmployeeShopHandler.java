@@ -5,13 +5,14 @@ import com.example.server.mediator.requests.persons.GetEmployeeShopRequest;
 import com.example.server.mediator.Request;
 import com.example.server.mediator.responses.persons.GetEmployeeShopResponse;
 import com.example.server.mediator.Response;
+import com.example.server.model.persistence.EmployeePersistence;
 import com.example.server.model.persistence.PersonPersistence;
 
 public class GetEmployeeShopHandler implements Handler {
-    private final PersonPersistence personPersistence;
+    private final EmployeePersistence personPersistence;
 
     public GetEmployeeShopHandler() {
-        this.personPersistence = new PersonPersistence();
+        this.personPersistence = new EmployeePersistence();
     }
 
     @Override

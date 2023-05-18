@@ -1,5 +1,6 @@
 package com.example.perfumeshop.requests;
 
+import com.example.perfumeshop.model.AddProductRequest;
 import com.example.perfumeshop.model.Person;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -53,4 +54,45 @@ public class PersonRequest {
         return objectMapper.readValue(response.body(), new TypeReference<>(){});
     }
 
+    public String deletePerson(Person person) throws URISyntaxException, IOException, InterruptedException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        String jsonBody = objectMapper.writeValueAsString(person);
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(new URI(BASE_URL + "/delete_person"))
+                .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
+                .header("Content-Type", "application/json")
+                .build();
+
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
+
+    public String addPerson(Person person) throws URISyntaxException, IOException, InterruptedException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        String jsonBody = objectMapper.writeValueAsString(person);
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(new URI(BASE_URL + "/add_person"))
+                .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
+                .header("Content-Type", "application/json")
+                .build();
+
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
+
+    public String updatePerson(Person person) throws URISyntaxException, IOException, InterruptedException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        String jsonBody = objectMapper.writeValueAsString(person);
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(new URI(BASE_URL + "/update_person"))
+                .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
+                .header("Content-Type", "application/json")
+                .build();
+
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
 }

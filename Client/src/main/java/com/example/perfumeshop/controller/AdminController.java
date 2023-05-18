@@ -73,7 +73,7 @@ public class AdminController extends Observable implements Initializable, Observ
             }
         });
         addButton.setOnAction(e -> {
-            RegisterController registerController = new RegisterController();
+            RegisterController registerController = new RegisterController(personItems);
             this.addObserver(registerController);
             Callback<Class<?>, Object> controllerFactory = type -> {
                 if (type == RegisterController.class) {
@@ -83,6 +83,33 @@ public class AdminController extends Observable implements Initializable, Observ
                         return type.newInstance();
                     } catch (Exception exc) {
                         System.err.println("Could not load register controller " + type.getName());
+                        throw new RuntimeException(exc);
+                    }
+                }
+            };
+            Controller.loadFXML("/com/example/perfumeshop/register-view.fxml", controllerFactory);
+        });
+        deleteButton.setOnAction(e -> {
+            try {
+                Person person = personTableView.getSelectionModel().getSelectedItem();
+                personRequest.deletePerson(person);
+                personItems.remove(person);
+            } catch (IOException | InterruptedException | URISyntaxException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+        editButton.setOnAction(e -> {
+            Person person = personTableView.getSelectionModel().getSelectedItem();
+            RegisterController editController = new RegisterController(personItems, person);
+            this.addObserver(editController);
+            Callback<Class<?>, Object> controllerFactory = type -> {
+                if (type == RegisterController.class) {
+                    return editController;
+                } else {
+                    try {
+                        return type.newInstance();
+                    } catch (Exception exc) {
+                        System.err.println("Could not load edit controller " + type.getName());
                         throw new RuntimeException(exc);
                     }
                 }

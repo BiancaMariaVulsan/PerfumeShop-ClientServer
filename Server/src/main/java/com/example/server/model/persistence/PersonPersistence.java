@@ -11,14 +11,13 @@ public class PersonPersistence extends DatabaseObj<Person> {
 
     protected String createInsertQuery(Person employee) {
         StringBuilder sb = new StringBuilder();
-        sb.append("INSERT INTO person (firstname,lastname,role,username,password,id_shop) VALUES (");
+        sb.append("INSERT INTO person (firstname,lastname,role,username,password) VALUES (");
         sb.append("'");
         sb.append(employee.getFirstName());sb.append("','");
         sb.append(employee.getLastName());sb.append("',");
         sb.append(employee.getRole().ordinal());sb.append(",'");
         sb.append(employee.getUsername());sb.append("','");
-        sb.append(employee.getPassword());sb.append("',");
-        sb.append(employee.getShopId());
+        sb.append(employee.getPassword());sb.append("'");
         sb.append(")");
 
         return sb.toString();
@@ -35,8 +34,6 @@ public class PersonPersistence extends DatabaseObj<Person> {
         sb.append(person.getPassword());
         sb.append("',role=");
         sb.append(person.getRole().ordinal());
-        sb.append(",id_shop=");
-        sb.append(person.getShopId());
         sb.append(" WHERE id=");
         sb.append(person.getId());
         return sb.toString();
@@ -53,9 +50,8 @@ public class PersonPersistence extends DatabaseObj<Person> {
                 String username = resultSet.getString("username");
                 String password = resultSet.getString("password");
                 int role_nr = resultSet.getInt("role");
-                int shopId = resultSet.getInt("id_shop");
                 Role role = Role.values()[role_nr];
-                Person person = new Person(id, firstName, lastName, role, username, password, shopId);
+                Person person = new Person(id, firstName, lastName, role, username, password);
                 persons.add(person);
             }
             return persons;
