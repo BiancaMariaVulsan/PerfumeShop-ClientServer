@@ -5,35 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d36c23ad-556d-4ac9-80e5-6191bf4bd9d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/model/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/requests/persons/AddPersonRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/requests/persons/DeletePersonRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/requests/persons/UpdatePersonRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/responses/products/AddPersonResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/responses/products/DeletePersonResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/mediator/responses/products/UpdatePersonResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/persistence/EmployeePersistence.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/AddPersonHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/DeletePersonHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/UpdatePersonHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/model/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/requests/PersonRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/requests/PersonRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/controller/RegisterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/model/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/model/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/PersonRequest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/PersonRequest$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/PersonRequest$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/PersonRequest$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/PersonRequest$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/PersonRequest$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/PersonRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/com/example/perfumeshop/requests/PersonRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/ServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/ServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/api/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/api/PersonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/persistence/PersonPersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/model/persistence/PersonPersistence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/GetEmployeeShopHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/GetEmployeeShopHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +179,8 @@
       <workItem from="1684218386348" duration="9987000" />
       <workItem from="1684259636626" duration="14995000" />
       <workItem from="1684302344181" duration="5938000" />
-      <workItem from="1684418172191" duration="16693000" />
+      <workItem from="1684418172191" duration="16788000" />
+      <workItem from="1684500975416" duration="8922000" />
     </task>
     <servers />
   </component>
@@ -237,11 +210,6 @@
           <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/SaveProductsHandler.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Server/src/main/java/com/example/server/filesService/bridge/TxtFormat.java</url>
           <line>10</line>
           <option name="timeStamp" value="65" />
@@ -262,16 +230,6 @@
           <option name="timeStamp" value="80" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Server/src/main/java/com/example/server/api/ProductController.java</url>
-          <line>91</line>
-          <option name="timeStamp" value="82" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Client/src/main/java/com/example/perfumeshop/controller/AdminController.java</url>
-          <line>101</line>
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Server/src/main/java/com/example/server/api/PersonController.java</url>
           <line>68</line>
           <option name="timeStamp" value="88" />
@@ -285,11 +243,6 @@
           <url>file://$PROJECT_DIR$/Server/src/main/java/com/example/server/api/PersonController.java</url>
           <line>75</line>
           <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Server/src/main/java/com/example/server/personService/AddPersonHandler.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="93" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
